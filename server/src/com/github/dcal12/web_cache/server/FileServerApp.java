@@ -15,7 +15,7 @@ import javax.xml.ws.soap.MTOM;
 @WebService(endpointInterface = "com.github.dcal12.web_cache.server.FileServer")
 public class FileServerApp implements FileServer {
 
-    private final String storage = "/home/user/classes/COMPSCI-711/assignments/web-cache/server/files";
+    private final String storage = "/home/user/classes/COMPSCI-711/assignments/web-cache/server/files/";
     private static FileBrowser fileBrowser = FileBrowser.getInstance();
 
     public FileServerApp() {

@@ -31,6 +31,7 @@ public class FileBrowser {
          */
 
         FileDataSource file = new FileDataSource(filePath + fileName);
-        return new DataHandler(file);
+        DataHandler fileDataHandler = new DataHandler(file);
+        return fileDataHandler;
     }
 }

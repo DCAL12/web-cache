@@ -1,6 +1,7 @@
 
 package com.github.dcal12.web_cache.client.proxy;
 
+import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
 public class DownloadFileResponse {
 
     @XmlElement(name = "return")
-    protected byte[] _return;
+    protected DataHandler _return;
 
     /**
      * Gets the value of the return property.
@@ -42,7 +43,7 @@ public class DownloadFileResponse {
      *     possible object is
      *     byte[]
      */
-    public byte[] getReturn() {
+    public DataHandler getReturn() {
         return _return;
     }
 
@@ -53,7 +54,7 @@ public class DownloadFileResponse {
      *     allowed object is
      *     byte[]
      */
-    public void setReturn(byte[] value) {
+    public void setReturn(DataHandler value) {
         this._return = value;
     }
 

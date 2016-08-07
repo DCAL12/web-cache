@@ -2,6 +2,7 @@
 package com.github.dcal12.web_cache.client.proxy;
 
 import java.util.List;
+import javax.activation.DataHandler;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -29,14 +30,14 @@ public interface FileServer {
      * 
      * @param arg0
      * @return
-     *     returns byte[]
+     *     returns DataHandler
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "downloadFile", targetNamespace = "http://server.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.proxy.DownloadFile")
     @ResponseWrapper(localName = "downloadFileResponse", targetNamespace = "http://server.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.proxy.DownloadFileResponse")
     @Action(input = "http://server.web_cache.dcal12.github.com/FileServer/downloadFileRequest", output = "http://server.web_cache.dcal12.github.com/FileServer/downloadFileResponse")
-    public byte[] downloadFile(
+    public DataHandler downloadFile(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
