@@ -45,7 +45,7 @@ public class CacheServerApp implements CacheServer {
         List<String> fileNames = new ArrayList<>(cachedFiles.keySet());
         Collections.sort(fileNames); // sort a-z
 
-        return (String[]) fileNames.toArray();
+        return fileNames.toArray(new String[0]);
     }
 
     @Override
