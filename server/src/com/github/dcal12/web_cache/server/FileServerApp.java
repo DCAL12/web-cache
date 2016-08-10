@@ -38,7 +38,7 @@ public class FileServerApp implements FileServer {
     @Override
     public String[] downloadFile(String fileName) {
         try {
-            return (String[]) fileBrowser.downloadFile(STORAGE, fileName).toArray();
+            return fileBrowser.downloadFile(STORAGE, fileName).toArray(new String[0]);
         } catch (IOException e) {
             e.printStackTrace();
         }
