@@ -17,10 +17,10 @@
         </xsd:schema>
     </types>
     <message name="downloadFile">
-        <part name="parameters" element="tns:downloadFile"/>
+        <part name="parameters" element="tns:downloadFile"></part>
     </message>
     <message name="downloadFileResponse">
-        <part name="parameters" element="tns:downloadFileResponse"/>
+        <part name="parameters" element="tns:downloadFileResponse"></part>
     </message>
     <message name="listFiles">
         <part name="parameters" element="tns:listFiles"></part>

@@ -8,17 +8,18 @@ import javax.xml.namespace.QName;
 
 
 /**
- * This object contains factory methods for each
- * Java content interface and Java element interface
- * generated in the com.github.dcal12.web_cache.cache.clientProxy package.
- * <p>An ObjectFactory allows you to programatically
- * construct new instances of the Java representation
- * for XML content. The Java representation of XML
- * content can consist of schema derived interfaces
- * and classes representing the binding of schema
- * type definitions, element declarations and model
- * groups.  Factory methods for each of these are
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the com.github.dcal12.web_cache.cache.clientProxy package. 
+ * <p>An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
  * provided in this class.
+ * 
  */
 @XmlRegistry
 public class ObjectFactory {
@@ -30,12 +31,14 @@ public class ObjectFactory {
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.github.dcal12.web_cache.cache.clientProxy
+     * 
      */
     public ObjectFactory() {
     }
 
     /**
      * Create an instance of {@link DownloadFile }
+     * 
      */
     public DownloadFile createDownloadFile() {
         return new DownloadFile();
@@ -43,6 +46,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link DownloadFileResponse }
+     * 
      */
     public DownloadFileResponse createDownloadFileResponse() {
         return new DownloadFileResponse();
@@ -50,6 +54,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ListFilesResponse }
+     * 
      */
     public ListFilesResponse createListFilesResponse() {
         return new ListFilesResponse();
@@ -57,6 +62,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ListFiles }
+     * 
      */
     public ListFiles createListFiles() {
         return new ListFiles();
@@ -64,6 +70,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListFilesResponse }{@code >}}
+     * 
      */
     @XmlElementDecl(namespace = "http://server.web_cache.dcal12.github.com/", name = "listFilesResponse")
     public JAXBElement<ListFilesResponse> createListFilesResponse(ListFilesResponse value) {
@@ -72,6 +79,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListFiles }{@code >}}
+     * 
      */
     @XmlElementDecl(namespace = "http://server.web_cache.dcal12.github.com/", name = "listFiles")
     public JAXBElement<ListFiles> createListFiles(ListFiles value) {
@@ -80,6 +88,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DownloadFileResponse }{@code >}}
+     * 
      */
     @XmlElementDecl(namespace = "http://server.web_cache.dcal12.github.com/", name = "downloadFileResponse")
     public JAXBElement<DownloadFileResponse> createDownloadFileResponse(DownloadFileResponse value) {
@@ -88,6 +97,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DownloadFile }{@code >}}
+     * 
      */
     @XmlElementDecl(namespace = "http://server.web_cache.dcal12.github.com/", name = "downloadFile")
     public JAXBElement<DownloadFile> createDownloadFile(DownloadFile value) {

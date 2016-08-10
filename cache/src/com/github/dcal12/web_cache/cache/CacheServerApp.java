@@ -21,7 +21,7 @@ import java.util.List;
 public class CacheServerApp implements CacheServer {
 
     private static FileServer clientProxy;
-    private static Hashtable<String, String> cachedFiles;
+    private static Hashtable<String, String[]> cachedFiles;
     private static List<LogEntry> log;
 
     static {
@@ -54,13 +54,13 @@ public class CacheServerApp implements CacheServer {
     }
 
     @Override
-    public String downloadFile(String fileName) {
+    public String[] downloadFile(String fileName) {
 
         if (cachedFiles.containsKey(fileName)) {
             return cachedFiles.get(fileName);
         }
 
-        String download = clientProxy.downloadFile(fileName);
+        String[] download = clientProxy.downloadFile(fileName);
         cachedFiles.put(fileName, download);
 
         return download;
