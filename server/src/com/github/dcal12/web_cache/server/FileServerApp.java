@@ -2,10 +2,10 @@ package com.github.dcal12.web_cache.server;
 
 import com.github.dcal12.web_cache.server.utility.FileBrowser;
 
-import javax.activation.DataHandler;
-import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.xml.ws.Endpoint;
 import javax.xml.ws.soap.MTOM;
+import java.io.IOException;
 
 /**
  * Created by user on 8/7/16.
@@ -15,24 +15,34 @@ import javax.xml.ws.soap.MTOM;
 @WebService(endpointInterface = "com.github.dcal12.web_cache.server.FileServer")
 public class FileServerApp implements FileServer {
 
-    private final String storage = "/home/user/classes/COMPSCI-711/assignments/web-cache/server/files/";
-    private static FileBrowser fileBrowser = FileBrowser.getInstance();
+    private static final String STORAGE = "/home/user/classes/COMPSCI-711/assignments/web-cache/server/files/";
+    private static FileBrowser fileBrowser;
+
+    static {
+        fileBrowser = FileBrowser.getInstance();
+    }
 
     public FileServerApp() {
     }
 
-    @WebMethod
-    public String greet(String name) {
-        return "hello " + name;
+    // Start the web server
+    public static void main(String[] args) {
+        Endpoint.publish("http://localhost:8080/app", new FileServerApp());
     }
 
     @Override
     public String[] listFiles() {
-        return fileBrowser.listFiles(storage);
+        return fileBrowser.listFiles(STORAGE);
     }
 
     @Override
-    public DataHandler downloadFile(String fileName) {
-        return fileBrowser.downloadFile(storage, fileName);
+    public String[] downloadFile(String fileName) {
+        try {
+            return (String[]) fileBrowser.downloadFile(STORAGE, fileName).toArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
