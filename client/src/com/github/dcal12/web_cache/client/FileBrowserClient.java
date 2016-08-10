@@ -1,16 +1,15 @@
 package com.github.dcal12.web_cache.client;
 
+import com.github.dcal12.web_cache.client.clientProxy.CacheServer;
+import com.github.dcal12.web_cache.client.clientProxy.CacheServerAppService;
 import com.github.dcal12.web_cache.client.display.FileListPanel;
-import com.github.dcal12.web_cache.client.proxy.FileServer;
-import com.github.dcal12.web_cache.client.proxy.FileServerAppService;
 
-import javax.activation.DataHandler;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -23,7 +22,7 @@ public class FileBrowserClient {
     private static final String DOWNLOAD_LOCATION = "/home/user/Downloads/";
     private static JFrame mainFrame;
     private static FileListPanel fileListPanel;
-    private static FileServer proxy;
+    private static CacheServer clientProxy;
 
     static {
         // initialize GUI
@@ -35,53 +34,39 @@ public class FileBrowserClient {
         mainFrame.pack();
         mainFrame.setLocationRelativeTo(null);
 
-        proxy = new FileServerAppService().getFileServerAppPort();
+        clientProxy = new CacheServerAppService().getCacheServerAppPort();
     }
 
     public static void main(String[] args) throws IOException {
 
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
+        SwingUtilities.invokeLater(() -> {
 
-                fileListPanel.addServerFileElements(proxy.listFiles().toArray());
+            fileListPanel.addServerFileElements(clientProxy.listServerFiles().toArray());
 
-                // GUI event handlers
-                fileListPanel.addDownloadListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent actionEvent) {
-                        List selectedItems = fileListPanel.getSelectedItems();
+            // GUI event handlers
+            fileListPanel.addDownloadListener(actionEvent -> {
 
-                        selectedItems.forEach(item -> {
+                List selectedItems = fileListPanel.getSelectedItems();
 
-                            String fileName = String.valueOf(item);
-                            FileOutputStream outputStream = null;
+                selectedItems.forEach(item -> {
 
-                            DataHandler dataHandler = proxy.downloadFile(fileName);
+                    String fileName = String.valueOf(item);
+                    Path path = FileSystems.getDefault().getPath(DOWNLOAD_LOCATION, fileName);
 
-                            // check for a proper download path
-                            try {
-                                outputStream = new FileOutputStream(DOWNLOAD_LOCATION + fileName);
-                            } catch (FileNotFoundException e) {
-                                e.printStackTrace();
-                            }
+                    List<String> download = Arrays.asList(clientProxy.downloadFile(fileName));
 
-                            // save the downloaded file
-                            try {
-                                dataHandler.writeTo(outputStream);
-                                outputStream.flush();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-
-                            System.out.println("downloaded '" + fileName + "'");
-                        });
+                    try {
+                        Files.write(path, download);
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                });
 
-                // display GUI
-                mainFrame.setVisible(true);
-            }
+                    System.out.println("downloaded '" + fileName + "'");
+                });
+            });
+
+            // display GUI
+            mainFrame.setVisible(true);
         });
     }
 }
