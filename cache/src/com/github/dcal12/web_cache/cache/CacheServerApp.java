@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Douglas Callaway on 8/7/16.
@@ -56,23 +57,37 @@ public class CacheServerApp implements CacheServer {
     @Override
     public String[] downloadFile(String fileName) {
 
-        if (cachedFiles.containsKey(fileName)) {
+        LogEntry request = new LogEntry(fileName);
+        log.add(request);
+        System.out.println(request);
+
+        Boolean isCached = cachedFiles.containsKey(fileName);
+        LogEntry response = new LogEntry(fileName, isCached);
+        log.add(response);
+        System.out.println(response);
+
+        if (isCached) {
             return cachedFiles.get(fileName);
         }
 
-        String[] download = clientProxy.downloadFile(fileName);
-        cachedFiles.put(fileName, download);
-
-        return download;
+        String[] downloadFromServer = clientProxy.downloadFile(fileName);
+        cachedFiles.put(fileName, downloadFromServer);
+        return downloadFromServer;
     }
 
     @Override
     public String[] getLog() {
-        return (String[]) log.toArray();
+        List<String> logEntries = log.stream()
+                .map(LogEntry::toString)
+                .collect(Collectors.toList());
+        return logEntries.toArray(new String[0]);
     }
 
     @Override
-    public void clearLog() {
-        log.clear();
+    public void clearCache() {
+        cachedFiles.clear();
+        LogEntry clear = new LogEntry();
+        log.add(clear);
+        System.out.println(clear);
     }
 }

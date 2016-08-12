@@ -30,5 +30,5 @@ public interface CacheServer {
     String[] getLog();
 
     @WebMethod
-    void clearLog();
+    void clearCache();
 }

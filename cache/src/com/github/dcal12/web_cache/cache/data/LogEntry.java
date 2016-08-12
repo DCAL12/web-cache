@@ -26,6 +26,11 @@ public class LogEntry {
         this.timestamp = new Date();
     }
 
+    public LogEntry() {
+        this.type = Type.CLEAR;
+        this.timestamp = new Date();
+    }
+
     @Override
     public String toString() {
 
@@ -33,17 +38,20 @@ public class LogEntry {
 
             case REQUEST:
                 return "user request: " +
-                        "file " + fileName +
-                        " at " + timestamp.toString();
+                        "file '" + fileName +
+                        "' at " + timestamp.toString();
 
             case RESPONSE:
-                return isCached ? ("response: cached file" + fileName) :
-                        ("response: file " + fileName + " downloaded from server");
+                return isCached ? ("response: cached file '" + fileName + "' at " + timestamp.toString()) :
+                        ("response: file '" + fileName + "' downloaded from server at " + timestamp.toString());
+
+            case CLEAR:
+                return "user cleared cache at " + timestamp.toString();
         }
         return null;
     }
 
     private enum Type {
-        REQUEST, RESPONSE
+        REQUEST, RESPONSE, CLEAR
     }
 }
