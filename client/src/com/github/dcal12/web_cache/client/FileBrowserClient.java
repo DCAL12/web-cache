@@ -3,14 +3,16 @@ package com.github.dcal12.web_cache.client;
 import com.github.dcal12.web_cache.client.clientProxy.CacheServer;
 import com.github.dcal12.web_cache.client.clientProxy.CacheServerAppService;
 import com.github.dcal12.web_cache.client.display.FileListPanel;
+import com.github.dcal12.web_cache.client.display.MainFrame;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 /**
@@ -20,21 +22,26 @@ import java.util.List;
 public class FileBrowserClient {
 
     private static final String DOWNLOAD_LOCATION = "/home/user/Downloads/";
-    private static JFrame mainFrame;
+    private static MainFrame mainFrame;
     private static FileListPanel fileListPanel;
     private static CacheServer clientProxy;
 
     static {
         // initialize GUI
-        mainFrame = new JFrame("File Browser");
         fileListPanel = new FileListPanel();
+        mainFrame = new MainFrame(fileListPanel);
 
-        mainFrame.setContentPane(fileListPanel);
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.pack();
-        mainFrame.setLocationRelativeTo(null);
-
+        // connect to cache server
         clientProxy = new CacheServerAppService().getCacheServerAppPort();
+    }
+
+    private static List<String> listClientFiles(String filePath) {
+        List<File> files = Arrays.asList(new File(filePath).listFiles());
+
+        return files.stream()
+                .map(File::getName)
+                .filter(s -> clientProxy.listServerFiles().contains(s))
+                .collect(Collectors.toList());
     }
 
     public static void main(String[] args) throws IOException {
@@ -42,6 +49,7 @@ public class FileBrowserClient {
         SwingUtilities.invokeLater(() -> {
 
             fileListPanel.addServerFileElements(clientProxy.listServerFiles().toArray());
+            fileListPanel.addClientFileElements(listClientFiles(DOWNLOAD_LOCATION).toArray(new String[0]));
 
             // GUI event handlers
             fileListPanel.addDownloadListener(actionEvent -> {
@@ -53,7 +61,7 @@ public class FileBrowserClient {
                     String fileName = String.valueOf(item);
                     Path path = FileSystems.getDefault().getPath(DOWNLOAD_LOCATION, fileName);
 
-                    List<String> download = Arrays.asList(clientProxy.downloadFile(fileName));
+                    List<String> download = clientProxy.downloadFile(fileName);
 
                     try {
                         Files.write(path, download);
@@ -61,8 +69,18 @@ public class FileBrowserClient {
                         e.printStackTrace();
                     }
 
-                    System.out.println("downloaded '" + fileName + "'");
+                    System.out.println("downloaded '" + fileName + "' at " + new Date());
+                    mainFrame.setLogText(clientProxy.getLog());
+
+                    fileListPanel.addClientFileElements(listClientFiles(DOWNLOAD_LOCATION).toArray(new String[0]));
                 });
+            });
+
+            mainFrame.addLogContentHandler(actionEvent -> mainFrame.setLogText(clientProxy.getLog()));
+
+            mainFrame.addClearCacheHandler(actionEvent -> {
+                clientProxy.clearCache();
+                mainFrame.setLogText(clientProxy.getLog());
             });
 
             // display GUI

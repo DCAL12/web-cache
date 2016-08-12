@@ -31,11 +31,11 @@
 <message name="getLogResponse">
 <part name="parameters" element="tns:getLogResponse"/>
 </message>
-<message name="clearLog">
-<part name="parameters" element="tns:clearLog"/>
+<message name="clearCache">
+<part name="parameters" element="tns:clearCache"/>
 </message>
-<message name="clearLogResponse">
-<part name="parameters" element="tns:clearLogResponse"/>
+<message name="clearCacheResponse">
+<part name="parameters" element="tns:clearCacheResponse"/>
 </message>
 <portType name="CacheServer">
 <operation name="listCachedFiles">
@@ -54,9 +54,9 @@
 <input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/getLogRequest" message="tns:getLog"/>
 <output wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/getLogResponse" message="tns:getLogResponse"/>
 </operation>
-<operation name="clearLog">
-<input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/clearLogRequest" message="tns:clearLog"/>
-<output wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/clearLogResponse" message="tns:clearLogResponse"/>
+<operation name="clearCache">
+<input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/clearCacheRequest" message="tns:clearCache"/>
+<output wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/clearCacheResponse" message="tns:clearCacheResponse"/>
 </operation>
 </portType>
 <binding name="CacheServerAppPortBinding" type="tns:CacheServer">
@@ -98,7 +98,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="clearLog">
+<operation name="clearCache">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

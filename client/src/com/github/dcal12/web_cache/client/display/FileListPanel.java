@@ -15,20 +15,24 @@ import java.awt.event.ActionListener;
 public class FileListPanel extends JPanel {
 
     private static final Insets EMPTY_INSETS = new Insets(0, 0, 0, 0);
-    private static final String SOURCE_LABEL = "Server Files";
-    private static final String DOWNLOAD_BUTTON_LABEL = "Download";
 
     private JList serverFilesList;
     private SortedListModel serverFilesListModel;
-    private JLabel serverLabel;
+    private JList clientFilesList;
+    private SortedListModel clientFilesListModel;
     private JButton downloadButton;
-    private Object[] selectedItems;
 
     public FileListPanel() {
         setLayout(new GridBagLayout());
-        serverLabel = new JLabel(SOURCE_LABEL);
+
+        JLabel serverLabel = new JLabel("Server Files");
         serverFilesListModel = new SortedListModel();
         serverFilesList = new JList(serverFilesListModel);
+
+        JLabel clientLabel = new JLabel("Client Files");
+        clientFilesListModel = new SortedListModel();
+        clientFilesList = new JList(clientFilesListModel);
+
         add(serverLabel, new GridBagConstraints(0, 0, 1, 1, 0, 0,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.NONE,
@@ -37,15 +41,29 @@ public class FileListPanel extends JPanel {
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
-        downloadButton = new JButton(DOWNLOAD_BUTTON_LABEL);
+
+        downloadButton = new JButton("Download >>");
         add(downloadButton, new GridBagConstraints(1, 2, 1, 2, 0, 0.25,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.NONE,
+                EMPTY_INSETS, 0, 0));
+
+        add(clientLabel, new GridBagConstraints(2, 0, 1, 1, 0, 0,
+                GridBagConstraints.CENTER,
+                GridBagConstraints.NONE,
+                EMPTY_INSETS, 0, 0));
+        add(new JScrollPane(clientFilesList), new GridBagConstraints(2, 1, 1, 5, 0.5, 1,
+                GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
     }
 
     public void addServerFileElements(Object newValues[]) {
         fillListModel(serverFilesListModel, newValues);
+    }
+
+    public void addClientFileElements(Object newValues[]) {
+        fillListModel(clientFilesListModel, newValues);
     }
 
     private void fillListModel(SortedListModel model, Object newValues[]) {

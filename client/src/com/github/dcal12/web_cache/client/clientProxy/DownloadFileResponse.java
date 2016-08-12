@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 public class DownloadFileResponse {
 
     @XmlElement(name = "return", nillable = true)
-    protected String[] _return;
+    protected List<String> _return;
 
     /**
      * Gets the value of the return property.
@@ -59,9 +59,9 @@ public class DownloadFileResponse {
      * 
      * 
      */
-    public String[] getReturn() {
+    public List<String> getReturn() {
         if (_return == null) {
-            _return = new String[0];
+            _return = new ArrayList<String>();
         }
         return this._return;
     }
