@@ -6,12 +6,17 @@ import com.github.dcal12.web_cache.client.display.FileListPanel;
 import com.github.dcal12.web_cache.client.display.MainFrame;
 
 import javax.swing.*;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 import java.util.stream.Collectors;
 
 
@@ -54,7 +59,7 @@ public class FileBrowserClient {
             // GUI event handlers
             fileListPanel.addDownloadListener(actionEvent -> {
 
-                List selectedItems = fileListPanel.getSelectedItems();
+                List selectedItems = fileListPanel.getSelectedServerItems();
 
                 selectedItems.forEach(item -> {
 
@@ -74,6 +79,28 @@ public class FileBrowserClient {
 
                     fileListPanel.addClientFileElements(listClientFiles(DOWNLOAD_LOCATION).toArray(new String[0]));
                 });
+            });
+
+            fileListPanel.addClientFileSelectionListener(listSelectionEvent -> {
+
+                if (listSelectionEvent.getValueIsAdjusting()) {
+
+                    List<String> lines = new ArrayList<>();
+
+                    try {
+                        BufferedReader reader = new BufferedReader(
+                                new FileReader(DOWNLOAD_LOCATION + fileListPanel.getSelectedClientItem()));
+
+
+                        String line = null;
+                        while ((line = reader.readLine()) != null) {
+                            lines.add(line);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    fileListPanel.setPreviewText(lines);
+                }
             });
 
             mainFrame.addLogContentHandler(actionEvent -> mainFrame.setLogText(clientProxy.getLog()));

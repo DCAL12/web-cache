@@ -3,8 +3,10 @@ package com.github.dcal12.web_cache.client.display;
 import com.github.dcal12.web_cache.client.data.SortedListModel;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 /**
  * Created by Douglas Callaway on 8/8/16.
@@ -21,6 +23,7 @@ public class FileListPanel extends JPanel {
     private JList clientFilesList;
     private SortedListModel clientFilesListModel;
     private JButton downloadButton;
+    private JTextArea filePreview;
 
     public FileListPanel() {
         setLayout(new GridBagLayout());
@@ -33,11 +36,14 @@ public class FileListPanel extends JPanel {
         clientFilesListModel = new SortedListModel();
         clientFilesList = new JList(clientFilesListModel);
 
+        JLabel previewLabel = new JLabel("Preview");
+        filePreview = new JTextArea();
+
         add(serverLabel, new GridBagConstraints(0, 0, 1, 1, 0, 0,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.NONE,
                 EMPTY_INSETS, 0, 0));
-        add(new JScrollPane(serverFilesList), new GridBagConstraints(0, 1, 1, 5, .5, 1,
+        add(new JScrollPane(serverFilesList), new GridBagConstraints(0, 1, 1, 5, 0.5, 1,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
@@ -56,6 +62,15 @@ public class FileListPanel extends JPanel {
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
+
+        add(previewLabel, new GridBagConstraints(3, 0, 1, 1, 0, 0,
+                GridBagConstraints.CENTER,
+                GridBagConstraints.NONE,
+                EMPTY_INSETS, 0, 0));
+        add(new JScrollPane(filePreview), new GridBagConstraints(3, 1, 1, 5, 0.5, 1,
+                GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH,
+                EMPTY_INSETS, 0, 0));
     }
 
     public void addServerFileElements(Object newValues[]) {
@@ -71,11 +86,25 @@ public class FileListPanel extends JPanel {
     }
 
     public void addDownloadListener(ActionListener listener) {
-        // pass selection listener to list panel
+        // pass button listener to server list panel
         downloadButton.addActionListener(listener);
     }
 
-    public java.util.List getSelectedItems() {
+    public void addClientFileSelectionListener(ListSelectionListener listSelectionListener) {
+        // pass selection listener to client list panel
+        clientFilesList.addListSelectionListener(listSelectionListener);
+    }
+
+    public void setPreviewText(List<String> lines) {
+        filePreview.setText("");
+        lines.forEach(s -> filePreview.append(s + '\n'));
+    }
+
+    public java.util.List getSelectedServerItems() {
         return serverFilesList.getSelectedValuesList();
+    }
+
+    public String getSelectedClientItem() {
+        return (String) clientFilesList.getSelectedValue();
     }
 }
