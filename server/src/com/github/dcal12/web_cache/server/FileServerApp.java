@@ -4,14 +4,12 @@ import com.github.dcal12.web_cache.server.utility.FileBrowser;
 
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
-import javax.xml.ws.soap.MTOM;
 import java.io.IOException;
 
 /**
  * Created by user on 8/7/16.
  */
 
-@MTOM
 @WebService(endpointInterface = "com.github.dcal12.web_cache.server.FileServer")
 public class FileServerApp implements FileServer {
 
