@@ -6,7 +6,6 @@ import com.github.dcal12.web_cache.cache.data.LogEntry;
 
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
-import javax.xml.ws.soap.MTOM;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
@@ -17,7 +16,6 @@ import java.util.stream.Collectors;
  * Created by Douglas Callaway on 8/7/16.
  */
 
-@MTOM
 @WebService(endpointInterface = "com.github.dcal12.web_cache.cache.CacheServer")
 public class CacheServerApp implements CacheServer {
 
