@@ -11,8 +11,17 @@ import java.util.List;
 
 public class MainFrame extends JFrame {
 
-    private static JMenuBar menuBar = new JMenuBar();
-    private static Menu cacheMenu = new Menu();
+    public static JFileChooser downloadDirectoryChooser;
+    private static JMenuBar menuBar;
+    private static Menu cacheMenu;
+
+    static {
+        downloadDirectoryChooser = new JFileChooser();
+        downloadDirectoryChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        menuBar = new JMenuBar();
+        cacheMenu = new Menu();
+    }
+
 
     public MainFrame(FileListPanel fileListPanel) {
 
@@ -29,6 +38,20 @@ public class MainFrame extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    public void setLogText(List<String> logEntries) {
+        Menu.LogViewer.logTextArea.setText("");
+        logEntries.forEach(s -> Menu.LogViewer.logTextArea.append(s + '\n'));
+    }
+
+    public void addLogContentHandler(ActionListener listener) {
+        // Pass log contents get function to menu item
+        Menu.logViewerItem.addActionListener(listener);
+    }
+
+    public void addClearCacheHandler(ActionListener listener) {
+        // Pass cache clear function to menu item
+        Menu.clearMenuItem.addActionListener(listener);
+    }
 
     private static class Menu extends JMenu {
 
@@ -65,20 +88,5 @@ public class MainFrame extends JFrame {
                 okayButton.addActionListener(actionEvent -> setVisible(false));
             }
         }
-    }
-
-    public void setLogText(List<String> logEntries) {
-        Menu.LogViewer.logTextArea.setText("");
-        logEntries.forEach(s -> Menu.LogViewer.logTextArea.append(s + '\n'));
-    }
-
-    public void addLogContentHandler(ActionListener listener) {
-        // Pass log contents get function to menu item
-        Menu.logViewerItem.addActionListener(listener);
-    }
-
-    public void addClearCacheHandler(ActionListener listener) {
-        // Pass cache clear function to menu item
-        Menu.clearMenuItem.addActionListener(listener);
     }
 }

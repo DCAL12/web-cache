@@ -26,14 +26,14 @@ import java.util.stream.Collectors;
 
 public class FileBrowserClient {
 
-    private static final String DOWNLOAD_LOCATION = "/home/user/Downloads/";
+    private static String downloadLocation = new File(".").getAbsolutePath();
     private static MainFrame mainFrame;
     private static FileListPanel fileListPanel;
     private static CacheServer clientProxy;
 
     static {
         // initialize GUI
-        fileListPanel = new FileListPanel();
+        fileListPanel = new FileListPanel(downloadLocation);
         mainFrame = new MainFrame(fileListPanel);
 
         // connect to cache server
@@ -54,9 +54,24 @@ public class FileBrowserClient {
         SwingUtilities.invokeLater(() -> {
 
             fileListPanel.addServerFileElements(clientProxy.listServerFiles().toArray());
-            fileListPanel.addClientFileElements(listClientFiles(DOWNLOAD_LOCATION).toArray(new String[0]));
+            fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
 
-            // GUI event handlers
+            // GUI EVENT HANDLERS
+
+            // change download directory
+            fileListPanel.addSelectDirectoryButtonListener(actionEvent -> {
+
+                // show folder chooser dialog
+                int userChoice = MainFrame.downloadDirectoryChooser.showOpenDialog(mainFrame);
+
+                if (userChoice == JFileChooser.APPROVE_OPTION) {
+                    downloadLocation = MainFrame.downloadDirectoryChooser.getSelectedFile().getAbsolutePath() + '/';
+                    fileListPanel.setSelectedDirectoryLabel(downloadLocation);
+                    fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
+                }
+            });
+
+            // download selected files
             fileListPanel.addDownloadListener(actionEvent -> {
 
                 List selectedItems = fileListPanel.getSelectedServerItems();
@@ -64,7 +79,7 @@ public class FileBrowserClient {
                 selectedItems.forEach(item -> {
 
                     String fileName = String.valueOf(item);
-                    Path path = FileSystems.getDefault().getPath(DOWNLOAD_LOCATION, fileName);
+                    Path path = FileSystems.getDefault().getPath(downloadLocation, fileName);
 
                     List<String> download = clientProxy.downloadFile(fileName);
 
@@ -77,10 +92,11 @@ public class FileBrowserClient {
                     System.out.println("downloaded '" + fileName + "' at " + new Date());
                     mainFrame.setLogText(clientProxy.getLog());
 
-                    fileListPanel.addClientFileElements(listClientFiles(DOWNLOAD_LOCATION).toArray(new String[0]));
+                    fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
                 });
             });
 
+            // preview a downloaded file
             fileListPanel.addClientFileSelectionListener(listSelectionEvent -> {
 
                 if (listSelectionEvent.getValueIsAdjusting()) {
@@ -89,7 +105,7 @@ public class FileBrowserClient {
 
                     try {
                         BufferedReader reader = new BufferedReader(
-                                new FileReader(DOWNLOAD_LOCATION + fileListPanel.getSelectedClientItem()));
+                                new FileReader(downloadLocation + fileListPanel.getSelectedClientItem()));
 
 
                         String line = null;
@@ -103,8 +119,10 @@ public class FileBrowserClient {
                 }
             });
 
+            // view cache server log
             mainFrame.addLogContentHandler(actionEvent -> mainFrame.setLogText(clientProxy.getLog()));
 
+            // clear cache contents
             mainFrame.addClearCacheHandler(actionEvent -> {
                 clientProxy.clearCache();
                 mainFrame.setLogText(clientProxy.getLog());

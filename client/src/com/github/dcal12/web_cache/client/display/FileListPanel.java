@@ -22,15 +22,21 @@ public class FileListPanel extends JPanel {
     private SortedListModel serverFilesListModel;
     private JList clientFilesList;
     private SortedListModel clientFilesListModel;
+    private JLabel selectedDirectoryLabel;
+    private JButton selectDirectoryButton;
     private JButton downloadButton;
     private JTextArea filePreview;
 
-    public FileListPanel() {
+    public FileListPanel(String selectedDirectory) {
         setLayout(new GridBagLayout());
 
         JLabel serverLabel = new JLabel("Server Files");
         serverFilesListModel = new SortedListModel();
         serverFilesList = new JList(serverFilesListModel);
+
+        JLabel downloadDirectoryLabel = new JLabel("Download to:");
+        selectedDirectoryLabel = new JLabel(selectedDirectory);
+        selectedDirectoryLabel.setFont(new Font("Courier", Font.PLAIN, 10));
 
         JLabel clientLabel = new JLabel("Client Files");
         clientFilesListModel = new SortedListModel();
@@ -43,13 +49,28 @@ public class FileListPanel extends JPanel {
                 GridBagConstraints.CENTER,
                 GridBagConstraints.NONE,
                 EMPTY_INSETS, 0, 0));
-        add(new JScrollPane(serverFilesList), new GridBagConstraints(0, 1, 1, 5, 0.5, 1,
+        add(new JScrollPane(serverFilesList), new GridBagConstraints(0, 1, 1, 8, 0.5, 1,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
 
+        add(downloadDirectoryLabel, new GridBagConstraints(1, 2, 1, 1, 0, 0.25,
+                GridBagConstraints.CENTER,
+                GridBagConstraints.NONE,
+                EMPTY_INSETS, 0, 0));
+        add(selectedDirectoryLabel, new GridBagConstraints(1, 3, 1, 1, 0, 0.25,
+                GridBagConstraints.CENTER,
+                GridBagConstraints.NONE,
+                new Insets(0, 5, 0, 5), 0, 0));
+
+        selectDirectoryButton = new JButton("Select...");
+        add(selectDirectoryButton, new GridBagConstraints(1, 5, 1, 2, 0, 0.25,
+                GridBagConstraints.CENTER,
+                GridBagConstraints.NONE,
+                EMPTY_INSETS, 0, 0));
+
         downloadButton = new JButton("Download >>");
-        add(downloadButton, new GridBagConstraints(1, 2, 1, 2, 0, 0.25,
+        add(downloadButton, new GridBagConstraints(1, 7, 1, 2, 0, 0.25,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.NONE,
                 EMPTY_INSETS, 0, 0));
@@ -58,7 +79,7 @@ public class FileListPanel extends JPanel {
                 GridBagConstraints.CENTER,
                 GridBagConstraints.NONE,
                 EMPTY_INSETS, 0, 0));
-        add(new JScrollPane(clientFilesList), new GridBagConstraints(2, 1, 1, 5, 0.5, 1,
+        add(new JScrollPane(clientFilesList), new GridBagConstraints(2, 1, 1, 8, 0.5, 1,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
@@ -67,7 +88,7 @@ public class FileListPanel extends JPanel {
                 GridBagConstraints.CENTER,
                 GridBagConstraints.NONE,
                 EMPTY_INSETS, 0, 0));
-        add(new JScrollPane(filePreview), new GridBagConstraints(3, 1, 1, 5, 0.5, 1,
+        add(new JScrollPane(filePreview), new GridBagConstraints(3, 1, 1, 8, 0.5, 1,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
@@ -82,16 +103,25 @@ public class FileListPanel extends JPanel {
     }
 
     private void fillListModel(SortedListModel model, Object newValues[]) {
+        model.clear();
         model.addAll(newValues);
     }
 
+    public void setSelectedDirectoryLabel(String selectedDirectory) {
+        selectedDirectoryLabel.setText(selectedDirectory);
+    }
+
+    public void addSelectDirectoryButtonListener(ActionListener listener) {
+        // pass directory select button listener
+        selectDirectoryButton.addActionListener(listener);
+    }
     public void addDownloadListener(ActionListener listener) {
-        // pass button listener to server list panel
+        // pass download button listener
         downloadButton.addActionListener(listener);
     }
 
     public void addClientFileSelectionListener(ListSelectionListener listSelectionListener) {
-        // pass selection listener to client list panel
+        // pass selection listener
         clientFilesList.addListSelectionListener(listSelectionListener);
     }
 
