@@ -13,7 +13,7 @@ import java.io.IOException;
 @WebService(endpointInterface = "com.github.dcal12.web_cache.server.FileServer")
 public class FileServerApp implements FileServer {
 
-    private static final String STORAGE = "/home/user/classes/COMPSCI-711/assignments/web-cache/server/files/";
+    private static final String STORAGE = "/home/user/classes/COMPSCI-711/assignments/web-cache/Part1/server/files/";
     private static FileBrowser fileBrowser;
 
     static {

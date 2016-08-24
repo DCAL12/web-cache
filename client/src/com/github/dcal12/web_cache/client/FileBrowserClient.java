@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 
 public class FileBrowserClient {
 
-    private static String downloadLocation = new File(".").getAbsolutePath();
+    private static String downloadLocation = new File("").getAbsolutePath();
     private static MainFrame mainFrame;
     private static FileListPanel fileListPanel;
     private static CacheServer clientProxy;
@@ -105,7 +105,7 @@ public class FileBrowserClient {
 
                     try {
                         BufferedReader reader = new BufferedReader(
-                                new FileReader(downloadLocation + fileListPanel.getSelectedClientItem()));
+                                new FileReader(downloadLocation + '/' + fileListPanel.getSelectedClientItem()));
 
 
                         String line = null;

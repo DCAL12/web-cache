@@ -61,7 +61,7 @@ public class ListServerFilesResponse {
      */
     public List<String> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<String>();
+            _return = new ArrayList<>();
         }
         return this._return;
     }
