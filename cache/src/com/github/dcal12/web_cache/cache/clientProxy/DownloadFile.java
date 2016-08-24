@@ -22,12 +22,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
+ * 
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "downloadFile", propOrder = {
-        "arg0"
+    "arg0"
 })
 public class DownloadFile {
 
@@ -35,7 +35,7 @@ public class DownloadFile {
 
     /**
      * Gets the value of the arg0 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
@@ -47,7 +47,7 @@ public class DownloadFile {
 
     /**
      * Sets the value of the arg0 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }

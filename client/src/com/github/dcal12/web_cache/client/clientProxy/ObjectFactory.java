@@ -34,6 +34,7 @@ public class ObjectFactory {
     private final static QName _ListCachedFiles_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "listCachedFiles");
     private final static QName _ListServerFilesResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "listServerFilesResponse");
     private final static QName _ClearCache_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "clearCache");
+    private final static QName _DownloadFileResponseReturn_QNAME = new QName("", "return");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.github.dcal12.web_cache.client.clientProxy
@@ -210,6 +211,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://cache.web_cache.dcal12.github.com/", name = "clearCache")
     public JAXBElement<ClearCache> createClearCache(ClearCache value) {
         return new JAXBElement<ClearCache>(_ClearCache_QNAME, ClearCache.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "return", scope = DownloadFileResponse.class)
+    public JAXBElement<byte[]> createDownloadFileResponseReturn(byte[] value) {
+        return new JAXBElement<byte[]>(_DownloadFileResponseReturn_QNAME, byte[].class, DownloadFileResponse.class, ((byte[]) value));
     }
 
 }

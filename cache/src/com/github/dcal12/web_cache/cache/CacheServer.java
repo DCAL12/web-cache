@@ -24,7 +24,7 @@ public interface CacheServer {
     String[] listServerFiles();
 
     @WebMethod
-    String[] downloadFile(String fileName);
+    byte[] downloadFile(String fileName);
 
     @WebMethod
     String[] getLog();

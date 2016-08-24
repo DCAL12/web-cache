@@ -2,18 +2,20 @@ package com.github.dcal12.web_cache.server;
 
 import com.github.dcal12.web_cache.server.utility.FileBrowser;
 
+import javax.activation.DataHandler;
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
-import java.io.IOException;
+import javax.xml.ws.soap.MTOM;
 
 /**
  * Created by user on 8/7/16.
  */
 
+@MTOM
 @WebService(endpointInterface = "com.github.dcal12.web_cache.server.FileServer")
 public class FileServerApp implements FileServer {
 
-    private static final String STORAGE = "/home/user/classes/COMPSCI-711/assignments/web-cache/server/files/";
+    private static final String STORAGE = "/home/user/classes/COMPSCI-711/assignments/web-cache/Part2/server/files/";
     private static FileBrowser fileBrowser;
 
     static {
@@ -34,13 +36,7 @@ public class FileServerApp implements FileServer {
     }
 
     @Override
-    public String[] downloadFile(String fileName) {
-        try {
-            return fileBrowser.downloadFile(STORAGE, fileName).toArray(new String[0]);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+    public DataHandler downloadFile(String fileName) {
+        return fileBrowser.downloadFile(STORAGE, fileName);
     }
 }

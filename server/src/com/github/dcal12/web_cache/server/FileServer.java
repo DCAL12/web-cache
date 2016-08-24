@@ -4,6 +4,7 @@ package com.github.dcal12.web_cache.server;
  * Created by Douglas Callaway on 8/7/16.
  */
 
+import javax.activation.DataHandler;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
@@ -21,5 +22,5 @@ public interface FileServer {
     String[] listFiles();
 
     @WebMethod
-    String[] downloadFile(String fileName);
+    DataHandler downloadFile(String fileName);
 }

@@ -10,9 +10,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -26,7 +23,7 @@ import java.util.stream.Collectors;
 
 public class FileBrowserClient {
 
-    private static String downloadLocation = new File(".").getAbsolutePath();
+    private static String downloadLocation = new File("").getAbsolutePath();
     private static MainFrame mainFrame;
     private static FileListPanel fileListPanel;
     private static CacheServer clientProxy;
@@ -78,15 +75,16 @@ public class FileBrowserClient {
 
                 selectedItems.forEach(item -> {
 
+                    /**
+                     * Adapted from the example by IBM developerWorks at
+                     * https://www.ibm.com/developerworks/library/ws-devaxis2part2/
+                     * Retrieved 07/08/2016
+                     */
+
                     String fileName = String.valueOf(item);
-                    Path path = FileSystems.getDefault().getPath(downloadLocation, fileName);
-
-                    List<String> download = clientProxy.downloadFile(fileName);
-
-                    try {
-                        Files.write(path, download);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    byte[] download = clientProxy.downloadFile(fileName);
+                    for (byte b : download) {
+                        System.out.println(b + ", ");
                     }
 
                     System.out.println("downloaded '" + fileName + "' at " + new Date());
@@ -105,7 +103,7 @@ public class FileBrowserClient {
 
                     try {
                         BufferedReader reader = new BufferedReader(
-                                new FileReader(downloadLocation + fileListPanel.getSelectedClientItem()));
+                                new FileReader(downloadLocation + '/' + fileListPanel.getSelectedClientItem()));
 
 
                         String line = null;

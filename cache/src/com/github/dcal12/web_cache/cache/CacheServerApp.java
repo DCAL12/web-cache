@@ -6,6 +6,7 @@ import com.github.dcal12.web_cache.cache.data.LogEntry;
 
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
+import javax.xml.ws.soap.MTOM;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
@@ -16,11 +17,12 @@ import java.util.stream.Collectors;
  * Created by Douglas Callaway on 8/7/16.
  */
 
+@MTOM
 @WebService(endpointInterface = "com.github.dcal12.web_cache.cache.CacheServer")
 public class CacheServerApp implements CacheServer {
 
     private static FileServer clientProxy;
-    private static Hashtable<String, String[]> cachedFiles;
+    private static Hashtable<String, byte[]> cachedFiles;
     private static List<LogEntry> log;
 
     static {
@@ -53,7 +55,7 @@ public class CacheServerApp implements CacheServer {
     }
 
     @Override
-    public String[] downloadFile(String fileName) {
+    public byte[] downloadFile(String fileName) {
 
         LogEntry request = new LogEntry(fileName);
         log.add(request);
@@ -68,7 +70,7 @@ public class CacheServerApp implements CacheServer {
             return cachedFiles.get(fileName);
         }
 
-        String[] downloadFromServer = clientProxy.downloadFile(fileName);
+        byte[] downloadFromServer = clientProxy.downloadFile(fileName);
         cachedFiles.put(fileName, downloadFromServer);
         return downloadFromServer;
     }
