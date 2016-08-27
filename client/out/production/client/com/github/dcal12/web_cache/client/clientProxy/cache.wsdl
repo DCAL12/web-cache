@@ -7,12 +7,6 @@
 <xsd:import namespace="http://cache.web_cache.dcal12.github.com/" schemaLocation="http://localhost:9090/cache?xsd=1"></xsd:import>
 </xsd:schema>
 </types>
-<message name="listCachedFiles">
-<part name="parameters" element="tns:listCachedFiles"></part>
-</message>
-<message name="listCachedFilesResponse">
-<part name="parameters" element="tns:listCachedFilesResponse"></part>
-</message>
 <message name="listServerFiles">
 <part name="parameters" element="tns:listServerFiles"></part>
 </message>
@@ -38,10 +32,6 @@
 <part name="parameters" element="tns:clearCacheResponse"></part>
 </message>
 <portType name="CacheServer">
-<operation name="listCachedFiles">
-<input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/listCachedFilesRequest" message="tns:listCachedFiles"></input>
-<output wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/listCachedFilesResponse" message="tns:listCachedFilesResponse"></output>
-</operation>
 <operation name="listServerFiles">
 <input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesRequest" message="tns:listServerFiles"></input>
 <output wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesResponse" message="tns:listServerFilesResponse"></output>
@@ -62,15 +52,6 @@
 <binding name="CacheServerAppPortBinding" type="tns:CacheServer">
 <wsp:PolicyReference URI="#CacheServerAppPortBinding_MTOM_Policy"></wsp:PolicyReference>
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
-<operation name="listCachedFiles">
-<soap:operation soapAction=""></soap:operation>
-<input>
-<soap:body use="literal"></soap:body>
-</input>
-<output>
-<soap:body use="literal"></soap:body>
-</output>
-</operation>
 <operation name="listServerFiles">
 <soap:operation soapAction=""></soap:operation>
 <input>

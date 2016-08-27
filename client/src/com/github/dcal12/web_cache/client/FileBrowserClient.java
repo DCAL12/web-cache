@@ -2,18 +2,15 @@ package com.github.dcal12.web_cache.client;
 
 import com.github.dcal12.web_cache.client.clientProxy.CacheServer;
 import com.github.dcal12.web_cache.client.clientProxy.CacheServerAppService;
+import com.github.dcal12.web_cache.client.clientProxy.DownloadResponse;
 import com.github.dcal12.web_cache.client.display.FileListPanel;
 import com.github.dcal12.web_cache.client.display.MainFrame;
+import com.sun.istack.ByteArrayDataSource;
 
+import javax.activation.DataHandler;
 import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -23,14 +20,17 @@ import java.util.stream.Collectors;
 
 public class FileBrowserClient {
 
-    private static String downloadLocation = new File("").getAbsolutePath();
+    private static String downloadLocation = "/home/user/Downloads/";
+    private static HashMap<String, byte[]> cachedBlocks = null;
     private static MainFrame mainFrame;
     private static FileListPanel fileListPanel;
     private static CacheServer clientProxy;
 
     static {
+        cachedBlocks = new HashMap<>();
+
         // initialize GUI
-        fileListPanel = new FileListPanel(downloadLocation);
+        fileListPanel = new FileListPanel("/home/user/Downloads/");
         mainFrame = new MainFrame(fileListPanel);
 
         // connect to cache server
@@ -51,7 +51,7 @@ public class FileBrowserClient {
         SwingUtilities.invokeLater(() -> {
 
             fileListPanel.addServerFileElements(clientProxy.listServerFiles().toArray());
-            fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
+            fileListPanel.addClientFileElements(listClientFiles("/home/user/Downloads/").toArray(new String[0]));
 
             // GUI EVENT HANDLERS
 
@@ -62,9 +62,9 @@ public class FileBrowserClient {
                 int userChoice = MainFrame.downloadDirectoryChooser.showOpenDialog(mainFrame);
 
                 if (userChoice == JFileChooser.APPROVE_OPTION) {
-                    downloadLocation = MainFrame.downloadDirectoryChooser.getSelectedFile().getAbsolutePath() + '/';
-                    fileListPanel.setSelectedDirectoryLabel(downloadLocation);
-                    fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
+                    downloadLocation = MainFrame.downloadDirectoryChooser.getSelectedFile().getAbsolutePath();
+                    fileListPanel.setSelectedDirectoryLabel("/home/user/Downloads/");
+                    fileListPanel.addClientFileElements(listClientFiles("/home/user/Downloads/").toArray(new String[0]));
                 }
             });
 
@@ -82,15 +82,48 @@ public class FileBrowserClient {
                      */
 
                     String fileName = String.valueOf(item);
-                    byte[] download = clientProxy.downloadFile(fileName);
-                    for (byte b : download) {
-                        System.out.println(b + ", ");
+                    DownloadResponse download = clientProxy.downloadFile(fileName);
+
+                    System.out.println("hashes: ");
+                    download.getBlockOrder().forEach(System.out::println);
+
+                    System.out.println("new blocks: ");
+                    download.getBlocks().getItem().forEach(blockElement -> {
+                        System.out.println(blockElement.getHash() + ":");
+                        for (byte b : blockElement.getBlock()){
+                            System.out.println(b);
+                        }
+
+                        cachedBlocks.put(blockElement.getHash(), blockElement.getBlock());
+                    });
+
+                    // reconstruct file
+                    ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
+                    System.out.println("rebuilding...");
+                    download.getBlockOrder().forEach(hash -> {
+                        System.out.println(cachedBlocks.get(hash));
+                        try {
+                            byteOutputStream.write(cachedBlocks.get(hash));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+
+                    DataHandler dataHandler = new DataHandler(
+                            new ByteArrayDataSource(byteOutputStream.toByteArray(), "application/octet-stream"));
+
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream("/home/user/Downloads/" + fileName);
+                        dataHandler.writeTo(fileOutputStream);
+                        fileOutputStream.flush();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
 
                     System.out.println("downloaded '" + fileName + "' at " + new Date());
                     mainFrame.setLogText(clientProxy.getLog());
 
-                    fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
+                    fileListPanel.addClientFileElements(listClientFiles("/home/user/Downloads/").toArray(new String[0]));
                 });
             });
 
@@ -103,7 +136,7 @@ public class FileBrowserClient {
 
                     try {
                         BufferedReader reader = new BufferedReader(
-                                new FileReader(downloadLocation + '/' + fileListPanel.getSelectedClientItem()));
+                                new FileReader("/home/user/Downloads/" + fileListPanel.getSelectedClientItem()));
 
 
                         String line = null;

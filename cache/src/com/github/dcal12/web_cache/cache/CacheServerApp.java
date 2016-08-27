@@ -2,13 +2,12 @@ package com.github.dcal12.web_cache.cache;
 
 import com.github.dcal12.web_cache.cache.clientProxy.FileServer;
 import com.github.dcal12.web_cache.cache.clientProxy.FileServerAppService;
-import com.github.dcal12.web_cache.cache.data.LogEntry;
+import com.github.dcal12.web_cache.cache.data.*;
 
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 import javax.xml.ws.soap.MTOM;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,12 +21,12 @@ import java.util.stream.Collectors;
 public class CacheServerApp implements CacheServer {
 
     private static FileServer clientProxy;
-    private static Hashtable<String, byte[]> cachedFiles;
+    private static List<String> cachedBlocks;
     private static List<LogEntry> log;
 
     static {
         clientProxy = new FileServerAppService().getFileServerAppPort();
-        cachedFiles = new Hashtable<>();
+        cachedBlocks = new ArrayList<>();
         log = new ArrayList<>();
     }
 
@@ -41,38 +40,39 @@ public class CacheServerApp implements CacheServer {
     }
 
     @Override
-    public String[] listCachedFiles() {
-
-        List<String> fileNames = new ArrayList<>(cachedFiles.keySet());
-        Collections.sort(fileNames); // sort a-z
-
-        return fileNames.toArray(new String[0]);
-    }
-
-    @Override
     public String[] listServerFiles() {
         return clientProxy.listFiles();
     }
 
     @Override
-    public byte[] downloadFile(String fileName) {
+    public DownloadResponse downloadFile(String fileName) {
 
+        // log request
         LogEntry request = new LogEntry(fileName);
         log.add(request);
         System.out.println(request);
 
-        Boolean isCached = cachedFiles.containsKey(fileName);
-        LogEntry response = new LogEntry(fileName, isCached);
-        log.add(response);
-        System.out.println(response);
+        // download & divide file into blocks
+        List<String> blockOrder = new ArrayList<>();
+        Hashtable<String, byte[]> blocks = new Hashtable<>();
 
-        if (isCached) {
-            return cachedFiles.get(fileName);
-        }
+        FileChunker.simpleFileChunker
+                .chunk(clientProxy.downloadFile(fileName))
+                .forEach(chunk -> {
+                    String hash = MD5Hash.md5Hash.hash(chunk);
+                    blockOrder.add(hash);
 
-        byte[] downloadFromServer = clientProxy.downloadFile(fileName);
-        cachedFiles.put(fileName, downloadFromServer);
-        return downloadFromServer;
+                    if (!cachedBlocks.contains(hash)) {
+                        blocks.put(hash, chunk);
+                        cachedBlocks.add(hash);
+                    }
+                });
+
+        // package and send to client
+        DownloadResponse downloadResponse = new DownloadResponse();
+        downloadResponse.setBlockOrder(blockOrder);
+        downloadResponse.setBlocks(blocks);
+        return downloadResponse;
     }
 
     @Override
@@ -85,7 +85,7 @@ public class CacheServerApp implements CacheServer {
 
     @Override
     public void clearCache() {
-        cachedFiles.clear();
+        cachedBlocks.clear();
         LogEntry clear = new LogEntry();
         log.add(clear);
         System.out.println(clear);

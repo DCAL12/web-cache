@@ -24,17 +24,15 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _DownloadResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "downloadResponse");
     private final static QName _GetLog_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "getLog");
     private final static QName _ListServerFiles_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "listServerFiles");
     private final static QName _DownloadFile_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "downloadFile");
     private final static QName _DownloadFileResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "downloadFileResponse");
-    private final static QName _ListCachedFilesResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "listCachedFilesResponse");
     private final static QName _ClearCacheResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "clearCacheResponse");
     private final static QName _GetLogResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "getLogResponse");
-    private final static QName _ListCachedFiles_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "listCachedFiles");
     private final static QName _ListServerFilesResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "listServerFilesResponse");
     private final static QName _ClearCache_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "clearCache");
-    private final static QName _DownloadFileResponseReturn_QNAME = new QName("", "return");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.github.dcal12.web_cache.client.clientProxy
@@ -60,11 +58,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ListCachedFilesResponse }
+     * Create an instance of {@link DownloadResponse }
      * 
      */
-    public ListCachedFilesResponse createListCachedFilesResponse() {
-        return new ListCachedFilesResponse();
+    public DownloadResponse createDownloadResponse() {
+        return new DownloadResponse();
     }
 
     /**
@@ -108,19 +106,36 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ListCachedFiles }
-     * 
-     */
-    public ListCachedFiles createListCachedFiles() {
-        return new ListCachedFiles();
-    }
-
-    /**
      * Create an instance of {@link ListServerFilesResponse }
      * 
      */
     public ListServerFilesResponse createListServerFilesResponse() {
         return new ListServerFilesResponse();
+    }
+
+    /**
+     * Create an instance of {@link BlockElement }
+     * 
+     */
+    public BlockElement createBlockElement() {
+        return new BlockElement();
+    }
+
+    /**
+     * Create an instance of {@link BlockElementArray }
+     * 
+     */
+    public BlockElementArray createBlockElementArray() {
+        return new BlockElementArray();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DownloadResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cache.web_cache.dcal12.github.com/", name = "downloadResponse")
+    public JAXBElement<DownloadResponse> createDownloadResponse(DownloadResponse value) {
+        return new JAXBElement<DownloadResponse>(_DownloadResponse_QNAME, DownloadResponse.class, null, value);
     }
 
     /**
@@ -160,15 +175,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListCachedFilesResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cache.web_cache.dcal12.github.com/", name = "listCachedFilesResponse")
-    public JAXBElement<ListCachedFilesResponse> createListCachedFilesResponse(ListCachedFilesResponse value) {
-        return new JAXBElement<ListCachedFilesResponse>(_ListCachedFilesResponse_QNAME, ListCachedFilesResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ClearCacheResponse }{@code >}}
      * 
      */
@@ -187,15 +193,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListCachedFiles }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://cache.web_cache.dcal12.github.com/", name = "listCachedFiles")
-    public JAXBElement<ListCachedFiles> createListCachedFiles(ListCachedFiles value) {
-        return new JAXBElement<ListCachedFiles>(_ListCachedFiles_QNAME, ListCachedFiles.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListServerFilesResponse }{@code >}}
      * 
      */
@@ -211,15 +208,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://cache.web_cache.dcal12.github.com/", name = "clearCache")
     public JAXBElement<ClearCache> createClearCache(ClearCache value) {
         return new JAXBElement<ClearCache>(_ClearCache_QNAME, ClearCache.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "return", scope = DownloadFileResponse.class)
-    public JAXBElement<byte[]> createDownloadFileResponseReturn(byte[] value) {
-        return new JAXBElement<byte[]>(_DownloadFileResponseReturn_QNAME, byte[].class, DownloadFileResponse.class, ((byte[]) value));
     }
 
 }

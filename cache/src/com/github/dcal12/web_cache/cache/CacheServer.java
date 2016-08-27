@@ -4,6 +4,9 @@ package com.github.dcal12.web_cache.cache;
  * Created by Douglas Callaway on 8/7/16.
  */
 
+import com.github.dcal12.web_cache.cache.data.BlockedFile;
+import com.github.dcal12.web_cache.cache.data.DownloadResponse;
+
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
@@ -18,13 +21,10 @@ import javax.jws.WebService;
 public interface CacheServer {
 
     @WebMethod
-    String[] listCachedFiles();
-
-    @WebMethod
     String[] listServerFiles();
 
     @WebMethod
-    byte[] downloadFile(String fileName);
+    DownloadResponse downloadFile(String fileName);
 
     @WebMethod
     String[] getLog();
