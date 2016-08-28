@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://cache.web_cache.dcal12.github.com/}downloadRequest" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,17 +31,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class DownloadFile {
 
-    protected String arg0;
+    protected DownloadRequest arg0;
 
     /**
      * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link DownloadRequest }
      *     
      */
-    public String getArg0() {
+    public DownloadRequest getArg0() {
         return arg0;
     }
 
@@ -50,10 +50,10 @@ public class DownloadFile {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link DownloadRequest }
      *     
      */
-    public void setArg0(String value) {
+    public void setArg0(DownloadRequest value) {
         this.arg0 = value;
     }
 

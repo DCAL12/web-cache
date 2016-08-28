@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b66e5e72-3bdc-46f1-bb5c-4dc94ba74db4" name="Default" comment="updated clientProxy to reflect server WSDL">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockElement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashtableAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/MD5Hash.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ListCachedFiles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ListCachedFilesResponse.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/StringListAdapter.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElement.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElementArray.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElementArray.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServer.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServer.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" afterPath="" />
@@ -22,14 +20,12 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFile.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFileResponse.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFileResponse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/GetLog.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/GetLog.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/GetLogResponse.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/GetLogResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ListCachedFiles.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ListCachedFiles.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ListCachedFilesResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ListCachedFilesResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ListServerFiles.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ListServerFiles.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ListServerFilesResponse.class" afterPath="" />
@@ -37,17 +33,19 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ObjectFactory.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ObjectFactory.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/cache1.wsdl" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/package-info.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/package-info.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/CacheServer.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/CacheServer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServer.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/DownloadFileResponse.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/DownloadFileResponse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/DownloadFile.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/DownloadFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ObjectFactory.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ObjectFactory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/FileServer.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/FileServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" afterPath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" />
@@ -73,31 +71,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="CacheServerApp.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CacheServerApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1081">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="580">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#CacheServerApp#0" expanded="false" />
                 <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-                <element signature="e#1178#1179#0" expanded="true" />
-                <element signature="e#1224#1225#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DownloadResponse.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DownloadResponse.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="276">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#873#874#0" expanded="true" />
-                <element signature="e#909#910#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,7 +138,6 @@
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleByteBlocks.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/ByteBlocks.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/ClientResponse.java" />
-        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockedFile.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Chunker.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleBlockedFile.java" />
@@ -156,7 +149,10 @@
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashtableAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadResponse.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockElement.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/StringListAdapter.java" />
       </list>
     </option>
   </component>
@@ -167,7 +163,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1539" />
+    <option name="x" value="1555" />
     <option name="y" value="49" />
     <option name="width" value="2268" />
     <option name="height" value="2111" />
@@ -197,6 +193,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -257,9 +254,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -776,6 +772,8 @@
       <workItem from="1472009459375" duration="119000" />
       <workItem from="1472009666314" duration="6656000" />
       <workItem from="1472179852564" duration="37043000" />
+      <workItem from="1472421295149" duration="3419000" />
+      <workItem from="1472424724717" duration="1113000" />
     </task>
     <task id="LOCAL-00001" summary="implemented cache methods">
       <created>1470822038824</created>
@@ -809,10 +807,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81616000" />
+    <option name="totallyTimeSpent" value="86148000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1539" y="49" width="2268" height="2111" extended-state="0" />
+    <frame x="1555" y="49" width="2268" height="2111" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -877,58 +875,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#CacheServerApp#0" expanded="false" />
-            <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleBlockedFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockedFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleBlockedFile.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockedFile.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#CacheServerApp#0" expanded="false" />
-            <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -938,9 +893,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#CacheServerApp#0" expanded="false" />
             <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -950,9 +905,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#CacheServerApp#0" expanded="false" />
             <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -962,9 +917,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#CacheServerApp#0" expanded="false" />
             <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -974,9 +929,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#CacheServerApp#0" expanded="false" />
             <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#CacheServerApp#0" expanded="false" />
+            <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -986,9 +953,9 @@
         <state relative-caret-position="1104">
           <caret line="66" column="55" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#CacheServerApp#0" expanded="false" />
             <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1008,9 +975,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#CacheServerApp#0" expanded="false" />
             <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1027,9 +994,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#CacheServerApp#0" expanded="false" />
             <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1224#1225#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1121,32 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/ListFilesResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/ListFiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/FileServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/lang/Object.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1154,22 +1095,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashMethod.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SortedListModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -1178,22 +1105,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -1202,36 +1114,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockedFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="34" column="78" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleBlockedFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockedFile.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleBlockedFile.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/MD5Hash.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1241,8 +1132,71 @@
         <state relative-caret-position="690">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/FileServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/ListFilesResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/ListFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/StringListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashtableAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1254,38 +1208,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashtableAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        <state relative-caret-position="580">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#CacheServerApp#0" expanded="false" />
+            <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="276">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CacheServerApp#0" expanded="false" />
-            <element signature="method#CacheServerApp#0;class#CacheServerApp#0" expanded="false" />
-            <element signature="e#1178#1179#0" expanded="true" />
-            <element signature="e#1224#1225#0" expanded="true" />
           </folding>
         </state>
       </provider>

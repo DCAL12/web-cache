@@ -21,12 +21,10 @@ import java.util.stream.Collectors;
 public class CacheServerApp implements CacheServer {
 
     private static FileServer clientProxy;
-    private static List<String> cachedBlocks;
     private static List<LogEntry> log;
 
     static {
         clientProxy = new FileServerAppService().getFileServerAppPort();
-        cachedBlocks = new ArrayList<>();
         log = new ArrayList<>();
     }
 
@@ -45,27 +43,24 @@ public class CacheServerApp implements CacheServer {
     }
 
     @Override
-    public DownloadResponse downloadFile(String fileName) {
+    public DownloadResponse downloadFile(DownloadRequest downloadRequest) {
 
         // log request
-        LogEntry request = new LogEntry(fileName);
+        LogEntry request = new LogEntry(downloadRequest.getFileName());
         log.add(request);
         System.out.println(request);
 
-        // download & divide file into blocks
+        // download from server & divide file into blocks
         List<String> blockOrder = new ArrayList<>();
         Hashtable<String, byte[]> blocks = new Hashtable<>();
 
         FileChunker.simpleFileChunker
-                .chunk(clientProxy.downloadFile(fileName))
+                .chunk(clientProxy.downloadFile(downloadRequest.getFileName()))
                 .forEach(chunk -> {
                     String hash = MD5Hash.md5Hash.hash(chunk);
                     blockOrder.add(hash);
 
-                    if (!cachedBlocks.contains(hash)) {
-                        blocks.put(hash, chunk);
-                        cachedBlocks.add(hash);
-                    }
+                    if (!downloadRequest.getCachedBlocks().contains(hash)) { blocks.put(hash, chunk); }
                 });
 
         // package and send to client
@@ -85,7 +80,6 @@ public class CacheServerApp implements CacheServer {
 
     @Override
     public void clearCache() {
-        cachedBlocks.clear();
         LogEntry clear = new LogEntry();
         log.add(clear);
         System.out.println(clear);

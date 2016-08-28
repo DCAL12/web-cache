@@ -27,18 +27,6 @@ public interface CacheServer {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<java.lang.String>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listServerFiles", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ListServerFiles")
-    @ResponseWrapper(localName = "listServerFilesResponse", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ListServerFilesResponse")
-    @Action(input = "http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesRequest", output = "http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesResponse")
-    public List<String> listServerFiles();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns com.github.dcal12.web_cache.client.clientProxy.DownloadResponse
@@ -50,7 +38,19 @@ public interface CacheServer {
     @Action(input = "http://cache.web_cache.dcal12.github.com/CacheServer/downloadFileRequest", output = "http://cache.web_cache.dcal12.github.com/CacheServer/downloadFileResponse")
     public DownloadResponse downloadFile(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        DownloadRequest arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<java.lang.String>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listServerFiles", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ListServerFiles")
+    @ResponseWrapper(localName = "listServerFilesResponse", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ListServerFilesResponse")
+    @Action(input = "http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesRequest", output = "http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesResponse")
+    public List<String> listServerFiles();
 
     /**
      * 

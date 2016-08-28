@@ -30,6 +30,7 @@ public class ObjectFactory {
     private final static QName _DownloadFile_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "downloadFile");
     private final static QName _DownloadFileResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "downloadFileResponse");
     private final static QName _ClearCacheResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "clearCacheResponse");
+    private final static QName _DownloadRequest_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "downloadRequest");
     private final static QName _GetLogResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "getLogResponse");
     private final static QName _ListServerFilesResponse_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "listServerFilesResponse");
     private final static QName _ClearCache_QNAME = new QName("http://cache.web_cache.dcal12.github.com/", "clearCache");
@@ -98,6 +99,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DownloadRequest }
+     * 
+     */
+    public DownloadRequest createDownloadRequest() {
+        return new DownloadRequest();
+    }
+
+    /**
      * Create an instance of {@link GetLogResponse }
      * 
      */
@@ -127,6 +136,14 @@ public class ObjectFactory {
      */
     public BlockElementArray createBlockElementArray() {
         return new BlockElementArray();
+    }
+
+    /**
+     * Create an instance of {@link StringArray }
+     * 
+     */
+    public StringArray createStringArray() {
+        return new StringArray();
     }
 
     /**
@@ -181,6 +198,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://cache.web_cache.dcal12.github.com/", name = "clearCacheResponse")
     public JAXBElement<ClearCacheResponse> createClearCacheResponse(ClearCacheResponse value) {
         return new JAXBElement<ClearCacheResponse>(_ClearCacheResponse_QNAME, ClearCacheResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DownloadRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://cache.web_cache.dcal12.github.com/", name = "downloadRequest")
+    public JAXBElement<DownloadRequest> createDownloadRequest(DownloadRequest value) {
+        return new JAXBElement<DownloadRequest>(_DownloadRequest_QNAME, DownloadRequest.class, null, value);
     }
 
     /**

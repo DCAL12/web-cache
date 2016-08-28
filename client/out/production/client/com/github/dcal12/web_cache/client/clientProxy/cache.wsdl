@@ -4,20 +4,23 @@
 </wsp:Policy>
 <types>
 <xsd:schema>
-<xsd:import namespace="http://cache.web_cache.dcal12.github.com/" schemaLocation="http://localhost:9090/cache?xsd=1"></xsd:import>
+<xsd:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:9090/cache?xsd=1"></xsd:import>
+</xsd:schema>
+<xsd:schema>
+<xsd:import namespace="http://cache.web_cache.dcal12.github.com/" schemaLocation="http://localhost:9090/cache?xsd=2"></xsd:import>
 </xsd:schema>
 </types>
-<message name="listServerFiles">
-<part name="parameters" element="tns:listServerFiles"></part>
-</message>
-<message name="listServerFilesResponse">
-<part name="parameters" element="tns:listServerFilesResponse"></part>
-</message>
 <message name="downloadFile">
 <part name="parameters" element="tns:downloadFile"></part>
 </message>
 <message name="downloadFileResponse">
 <part name="parameters" element="tns:downloadFileResponse"></part>
+</message>
+<message name="listServerFiles">
+<part name="parameters" element="tns:listServerFiles"></part>
+</message>
+<message name="listServerFilesResponse">
+<part name="parameters" element="tns:listServerFilesResponse"></part>
 </message>
 <message name="getLog">
 <part name="parameters" element="tns:getLog"></part>
@@ -32,13 +35,13 @@
 <part name="parameters" element="tns:clearCacheResponse"></part>
 </message>
 <portType name="CacheServer">
-<operation name="listServerFiles">
-<input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesRequest" message="tns:listServerFiles"></input>
-<output wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesResponse" message="tns:listServerFilesResponse"></output>
-</operation>
 <operation name="downloadFile">
 <input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/downloadFileRequest" message="tns:downloadFile"></input>
 <output wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/downloadFileResponse" message="tns:downloadFileResponse"></output>
+</operation>
+<operation name="listServerFiles">
+<input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesRequest" message="tns:listServerFiles"></input>
+<output wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesResponse" message="tns:listServerFilesResponse"></output>
 </operation>
 <operation name="getLog">
 <input wsam:Action="http://cache.web_cache.dcal12.github.com/CacheServer/getLogRequest" message="tns:getLog"></input>
@@ -52,7 +55,7 @@
 <binding name="CacheServerAppPortBinding" type="tns:CacheServer">
 <wsp:PolicyReference URI="#CacheServerAppPortBinding_MTOM_Policy"></wsp:PolicyReference>
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
-<operation name="listServerFiles">
+<operation name="downloadFile">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -61,7 +64,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="downloadFile">
+<operation name="listServerFiles">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

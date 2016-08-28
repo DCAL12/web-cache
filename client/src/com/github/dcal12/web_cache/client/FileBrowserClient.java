@@ -1,8 +1,6 @@
 package com.github.dcal12.web_cache.client;
 
-import com.github.dcal12.web_cache.client.clientProxy.CacheServer;
-import com.github.dcal12.web_cache.client.clientProxy.CacheServerAppService;
-import com.github.dcal12.web_cache.client.clientProxy.DownloadResponse;
+import com.github.dcal12.web_cache.client.clientProxy.*;
 import com.github.dcal12.web_cache.client.display.FileListPanel;
 import com.github.dcal12.web_cache.client.display.MainFrame;
 import com.sun.istack.ByteArrayDataSource;
@@ -75,52 +73,47 @@ public class FileBrowserClient {
 
                 selectedItems.forEach(item -> {
 
-                    /**
-                     * Adapted from the example by IBM developerWorks at
-                     * https://www.ibm.com/developerworks/library/ws-devaxis2part2/
-                     * Retrieved 07/08/2016
+                    /*
+                      Adapted from the example by IBM developerWorks at
+                      https://www.ibm.com/developerworks/library/ws-devaxis2part2/
+                      Retrieved 07/08/2016
                      */
 
-                    String fileName = String.valueOf(item);
-                    DownloadResponse download = clientProxy.downloadFile(fileName);
+                    // package download request to cache server
+                    DownloadRequest downloadRequest = new DownloadRequest();
+                    downloadRequest.setFileName(String.valueOf(item));
+                    StringArray cachedBlockHashes = new StringArray();
+                    cachedBlockHashes.getItem().addAll(cachedBlocks.keySet());
+                    downloadRequest.setCachedBlocks(cachedBlockHashes);
 
-                    System.out.println("hashes: ");
-                    download.getBlockOrder().forEach(System.out::println);
+                    DownloadResponse download = clientProxy.downloadFile(downloadRequest);
 
-                    System.out.println("new blocks: ");
-                    download.getBlocks().getItem().forEach(blockElement -> {
-                        System.out.println(blockElement.getHash() + ":");
-                        for (byte b : blockElement.getBlock()){
-                            System.out.println(b);
-                        }
+                    download.getBlocks().getItem().forEach(blockElement ->
+                            cachedBlocks.put(blockElement.getHash(), blockElement.getBlock()));
 
-                        cachedBlocks.put(blockElement.getHash(), blockElement.getBlock());
-                    });
-
-                    // reconstruct file
+                    // reassemble byte chunks into single byte array
                     ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
-                    System.out.println("rebuilding...");
                     download.getBlockOrder().forEach(hash -> {
-                        System.out.println(cachedBlocks.get(hash));
                         try {
                             byteOutputStream.write(cachedBlocks.get(hash));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     });
+                    ByteArrayDataSource byteArrayDataSource =
+                            new ByteArrayDataSource(byteOutputStream.toByteArray(), "application/octet-stream");
 
-                    DataHandler dataHandler = new DataHandler(
-                            new ByteArrayDataSource(byteOutputStream.toByteArray(), "application/octet-stream"));
-
+                    // write bytes to file
+                    DataHandler dataHandler = new DataHandler(byteArrayDataSource);
                     try {
-                        FileOutputStream fileOutputStream = new FileOutputStream("/home/user/Downloads/" + fileName);
+                        FileOutputStream fileOutputStream = new FileOutputStream("/home/user/Downloads/" + downloadRequest.getFileName());
                         dataHandler.writeTo(fileOutputStream);
                         fileOutputStream.flush();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
-                    System.out.println("downloaded '" + fileName + "' at " + new Date());
+                    System.out.println("downloaded '" + downloadRequest.getFileName() + "' at " + new Date());
                     mainFrame.setLogText(clientProxy.getLog());
 
                     fileListPanel.addClientFileElements(listClientFiles("/home/user/Downloads/").toArray(new String[0]));
