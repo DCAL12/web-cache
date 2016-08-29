@@ -28,9 +28,7 @@ public class CacheServerApp implements CacheServer {
         log = new ArrayList<>();
     }
 
-    public CacheServerApp() {
-
-    }
+    public CacheServerApp() {}
 
     // Start the web server
     public static void main(String[] args) {
@@ -50,7 +48,9 @@ public class CacheServerApp implements CacheServer {
         log.add(request);
         System.out.println(request);
 
-        // download from server & divide file into blocks
+        byte[] download = clientProxy.downloadFile(downloadRequest.getFileName());
+
+        // divide file into blocks
         List<String> blockOrder = new ArrayList<>();
         Hashtable<String, byte[]> blocks = new Hashtable<>();
 
@@ -63,10 +63,22 @@ public class CacheServerApp implements CacheServer {
                     if (!downloadRequest.getCachedBlocks().contains(hash)) { blocks.put(hash, chunk); }
                 });
 
-        // package and send to client
+        // package for client
         DownloadResponse downloadResponse = new DownloadResponse();
         downloadResponse.setBlockOrder(blockOrder);
         downloadResponse.setBlocks(blocks);
+
+        // log response
+        int cachedBytesLength = download.length - blocks.values()
+                .stream()
+                .mapToInt(bytes -> bytes.length)
+                .sum();
+        LogEntry response = new LogEntry(downloadRequest.getFileName(), cachedBytesLength, download.length);
+        System.out.println("cached bytes: " + cachedBytesLength);
+        System.out.println("total bytes: " + download.length);
+        log.add(response);
+        System.out.println(response);
+
         return downloadResponse;
     }
 
@@ -76,12 +88,5 @@ public class CacheServerApp implements CacheServer {
                 .map(LogEntry::toString)
                 .collect(Collectors.toList());
         return logEntries.toArray(new String[0]);
-    }
-
-    @Override
-    public void clearCache() {
-        LogEntry clear = new LogEntry();
-        log.add(clear);
-        System.out.println(clear);
     }
 }

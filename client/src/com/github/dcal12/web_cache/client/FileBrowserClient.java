@@ -148,8 +148,8 @@ public class FileBrowserClient {
 
             // clear cache contents
             mainFrame.addClearCacheHandler(actionEvent -> {
-                clientProxy.clearCache();
-                mainFrame.setLogText(clientProxy.getLog());
+                cachedBlocks.clear();
+                System.out.println("cleared client cache at " + new Date().toString());
             });
 
             // display GUI

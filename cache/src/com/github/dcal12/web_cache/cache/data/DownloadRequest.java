@@ -15,6 +15,8 @@ public class DownloadRequest {
 
     private List<String> cachedBlocks;
 
+    private int cacheSize;
+
     public DownloadRequest() {}
 
     @XmlElement

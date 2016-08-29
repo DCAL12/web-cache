@@ -27,6 +27,18 @@ public interface CacheServer {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<java.lang.String>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listServerFiles", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ListServerFiles")
+    @ResponseWrapper(localName = "listServerFilesResponse", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ListServerFilesResponse")
+    @Action(input = "http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesRequest", output = "http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesResponse")
+    public List<String> listServerFiles();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns com.github.dcal12.web_cache.client.clientProxy.DownloadResponse
@@ -47,30 +59,9 @@ public interface CacheServer {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listServerFiles", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ListServerFiles")
-    @ResponseWrapper(localName = "listServerFilesResponse", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ListServerFilesResponse")
-    @Action(input = "http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesRequest", output = "http://cache.web_cache.dcal12.github.com/CacheServer/listServerFilesResponse")
-    public List<String> listServerFiles();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<java.lang.String>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getLog", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.GetLog")
     @ResponseWrapper(localName = "getLogResponse", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.GetLogResponse")
     @Action(input = "http://cache.web_cache.dcal12.github.com/CacheServer/getLogRequest", output = "http://cache.web_cache.dcal12.github.com/CacheServer/getLogResponse")
     public List<String> getLog();
-
-    /**
-     * 
-     */
-    @WebMethod
-    @RequestWrapper(localName = "clearCache", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ClearCache")
-    @ResponseWrapper(localName = "clearCacheResponse", targetNamespace = "http://cache.web_cache.dcal12.github.com/", className = "com.github.dcal12.web_cache.client.clientProxy.ClearCacheResponse")
-    @Action(input = "http://cache.web_cache.dcal12.github.com/CacheServer/clearCacheRequest", output = "http://cache.web_cache.dcal12.github.com/CacheServer/clearCacheResponse")
-    public void clearCache();
 
 }

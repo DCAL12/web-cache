@@ -28,7 +28,4 @@ public interface CacheServer {
 
     @WebMethod
     String[] getLog();
-
-    @WebMethod
-    void clearCache();
 }
