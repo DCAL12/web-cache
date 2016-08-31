@@ -22,7 +22,7 @@ public class CacheServerApp implements CacheServer {
 
     private static FileServer clientProxy = new FileServerAppService().getFileServerAppPort();
     private static List<LogEntry> log = new ArrayList<>();
-    private static Chunkable chunker = FileChunker.RABIN.chunker;
+    private static final FileChunker DEFAULT_CHUNKER = FileChunker.RABIN;
     private static Hashable hasher = Hasher.MD5.hasher;
 
     public CacheServerApp() {}
@@ -51,6 +51,17 @@ public class CacheServerApp implements CacheServer {
         List<String> blockOrder = new ArrayList<>();
         Hashtable<String, byte[]> blocks = new Hashtable<>();
 
+        // set FileChunker type
+        Chunkable chunker;
+        try {
+            chunker = FileChunker.valueOf(downloadRequest.getChunkMethod().toUpperCase()).chunker;
+        } catch (IllegalArgumentException e) {
+            System.out.println("invalid chunk method '" + downloadRequest.getChunkMethod() + "': " +
+                    "using default method: " + DEFAULT_CHUNKER.toString());
+            downloadRequest.setChunkMethod(DEFAULT_CHUNKER.toString());
+            chunker = DEFAULT_CHUNKER.chunker;
+        }
+
         chunker.chunk(clientProxy.downloadFile(downloadRequest.getFileName()))
                 .forEach(chunk -> {
                     String hash = hasher.hash(chunk);
@@ -69,7 +80,10 @@ public class CacheServerApp implements CacheServer {
                 .stream()
                 .mapToInt(bytes -> bytes.length)
                 .sum();
-        LogEntry response = new LogEntry(downloadRequest.getFileName(), cachedBytesLength, download.length);
+        LogEntry response = new LogEntry(downloadRequest.getFileName(),
+                downloadRequest.getChunkMethod(),
+                cachedBytesLength,
+                download.length);
         log.add(response);
         System.out.println(response);
 

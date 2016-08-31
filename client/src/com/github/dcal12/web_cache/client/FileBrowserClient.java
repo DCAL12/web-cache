@@ -18,17 +18,18 @@ import java.util.stream.Collectors;
 
 public class FileBrowserClient {
 
-    private static String downloadLocation = "/home/user/Downloads/";
+    private static String downloadLocation = new File("").getAbsolutePath();
     private static HashMap<String, byte[]> cachedBlocks = null;
     private static MainFrame mainFrame;
     private static FileListPanel fileListPanel;
     private static CacheServer clientProxy;
+    public static String chunkMethod = "Rabin";
 
     static {
         cachedBlocks = new HashMap<>();
 
         // initialize GUI
-        fileListPanel = new FileListPanel("/home/user/Downloads/");
+        fileListPanel = new FileListPanel(downloadLocation);
         mainFrame = new MainFrame(fileListPanel);
 
         // connect to cache server
@@ -49,7 +50,7 @@ public class FileBrowserClient {
         SwingUtilities.invokeLater(() -> {
 
             fileListPanel.addServerFileElements(clientProxy.listServerFiles().toArray());
-            fileListPanel.addClientFileElements(listClientFiles("/home/user/Downloads/").toArray(new String[0]));
+            fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
 
             // GUI EVENT HANDLERS
 
@@ -60,9 +61,9 @@ public class FileBrowserClient {
                 int userChoice = MainFrame.downloadDirectoryChooser.showOpenDialog(mainFrame);
 
                 if (userChoice == JFileChooser.APPROVE_OPTION) {
-                    downloadLocation = MainFrame.downloadDirectoryChooser.getSelectedFile().getAbsolutePath();
-                    fileListPanel.setSelectedDirectoryLabel("/home/user/Downloads/");
-                    fileListPanel.addClientFileElements(listClientFiles("/home/user/Downloads/").toArray(new String[0]));
+                    downloadLocation = MainFrame.downloadDirectoryChooser.getSelectedFile().getAbsolutePath() + '/';
+                    fileListPanel.setSelectedDirectoryLabel(downloadLocation);
+                    fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
                 }
             });
 
@@ -72,7 +73,6 @@ public class FileBrowserClient {
                 List selectedItems = fileListPanel.getSelectedServerItems();
 
                 selectedItems.forEach(item -> {
-
                     /*
                       Adapted from the example by IBM developerWorks at
                       https://www.ibm.com/developerworks/library/ws-devaxis2part2/
@@ -85,6 +85,7 @@ public class FileBrowserClient {
                     StringArray cachedBlockHashes = new StringArray();
                     cachedBlockHashes.getItem().addAll(cachedBlocks.keySet());
                     downloadRequest.setCachedBlocks(cachedBlockHashes);
+                    downloadRequest.setChunkMethod(chunkMethod);
 
                     DownloadResponse download = clientProxy.downloadFile(downloadRequest);
 
@@ -106,7 +107,7 @@ public class FileBrowserClient {
                     // write bytes to file
                     DataHandler dataHandler = new DataHandler(byteArrayDataSource);
                     try {
-                        FileOutputStream fileOutputStream = new FileOutputStream("/home/user/Downloads/" + downloadRequest.getFileName());
+                        FileOutputStream fileOutputStream = new FileOutputStream(downloadLocation + downloadRequest.getFileName());
                         dataHandler.writeTo(fileOutputStream);
                         fileOutputStream.flush();
                     } catch (IOException e) {
@@ -116,7 +117,7 @@ public class FileBrowserClient {
                     System.out.println("downloaded '" + downloadRequest.getFileName() + "' at " + new Date());
                     mainFrame.setLogText(clientProxy.getLog());
 
-                    fileListPanel.addClientFileElements(listClientFiles("/home/user/Downloads/").toArray(new String[0]));
+                    fileListPanel.addClientFileElements(listClientFiles(downloadLocation).toArray(new String[0]));
                 });
             });
 
@@ -129,7 +130,7 @@ public class FileBrowserClient {
 
                     try {
                         BufferedReader reader = new BufferedReader(
-                                new FileReader("/home/user/Downloads/" + fileListPanel.getSelectedClientItem()));
+                                new FileReader(downloadLocation + '/' + fileListPanel.getSelectedClientItem()));
 
 
                         String line = null;
@@ -151,6 +152,10 @@ public class FileBrowserClient {
                 cachedBlocks.clear();
                 System.out.println("cleared client cache at " + new Date().toString());
             });
+
+            // change chunk method
+            mainFrame.addChunkMethodMenuHandler(actionEvent ->
+                    chunkMethod = actionEvent.getActionCommand().toUpperCase());
 
             // display GUI
             mainFrame.setVisible(true);

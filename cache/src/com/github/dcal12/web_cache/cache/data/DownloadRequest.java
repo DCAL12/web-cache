@@ -12,10 +12,8 @@ import java.util.List;
 public class DownloadRequest {
 
     private String fileName;
-
     private List<String> cachedBlocks;
-
-    private int cacheSize;
+    private String chunkMethod;
 
     public DownloadRequest() {}
 
@@ -36,5 +34,14 @@ public class DownloadRequest {
 
     public void setCachedBlocks(List<String> cachedBlocks) {
         this.cachedBlocks = cachedBlocks;
+    }
+
+    @XmlElement
+    public String getChunkMethod() {
+        return chunkMethod;
+    }
+
+    public void setChunkMethod(String chunkMethod) {
+        this.chunkMethod = chunkMethod;
     }
 }

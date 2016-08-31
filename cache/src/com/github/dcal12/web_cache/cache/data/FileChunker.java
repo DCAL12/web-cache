@@ -16,7 +16,7 @@ public enum FileChunker {
          */
 
         List<byte[]> byteChunks = new ArrayList<>();
-        int chunkSize = 2047;
+        int chunkSize = 4;
 
         for (int i = 0; i < file.length; i+= chunkSize) {
             int endOfChunk = Math.min(file.length, i + chunkSize);
@@ -34,7 +34,7 @@ public enum FileChunker {
          */
 
         List<byte[]> byteChunks = new ArrayList<>();
-        int chunkSize = 2047;
+        int chunkSize = 4;
         int windowSize = 3;
         int prime = 541;
 

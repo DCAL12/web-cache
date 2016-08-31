@@ -11,6 +11,7 @@ public class LogEntry {
     private Type type;
     private String fileName;
     private Date timestamp;
+    private String method;
     private double cachedPercent;
 
     public LogEntry(String fileName) {
@@ -19,11 +20,12 @@ public class LogEntry {
         this.timestamp = new Date();
     }
 
-    public LogEntry(String fileName, int cachedBytes, int fileSizeBytes) {
+    public LogEntry(String fileName, String method, int cachedBytes, int fileSizeBytes) {
         this.type = Type.RESPONSE;
         this.fileName = fileName;
-        this.timestamp = new Date();
+        this.method = method;
         this.cachedPercent = (double) cachedBytes / fileSizeBytes * 100;
+        this.timestamp = new Date();
     }
 
     @Override
@@ -38,7 +40,7 @@ public class LogEntry {
 
             case RESPONSE:
                 return "response: " + String.format("%1$.1f", cachedPercent) + "% of '" +
-                        fileName + "' was constructed with the cached data. " +
+                        fileName + "' was constructed with the cached data using " + method + " blocks. " +
                         "Fragments sent to client at " + timestamp.toString();
         }
         return null;

@@ -1,5 +1,7 @@
 package com.github.dcal12.web_cache.client.display;
 
+import com.github.dcal12.web_cache.client.FileBrowserClient;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -53,11 +55,19 @@ public class MainFrame extends JFrame {
         Menu.clearMenuItem.addActionListener(listener);
     }
 
+    public void addChunkMethodMenuHandler(ActionListener listener) {
+        // pass chunk method selector function to menu items
+        for (JCheckBoxMenuItem item : Menu.ChunkMethodMenu.chunkMethodChoices){
+            item.addActionListener(listener);
+        }
+    }
+
     private static class Menu extends JMenu {
 
         final static JLabel CACHE_LABEL = new JLabel("Cache");
         static JMenuItem logViewerItem = new JMenuItem("view log");
         static LogViewer logViewer = new LogViewer();
+        static ChunkMethodMenu chunkMethodMenu = new ChunkMethodMenu();
         static JMenuItem clearMenuItem = new JMenuItem("clear cache");
 
         Menu() {
@@ -69,6 +79,7 @@ public class MainFrame extends JFrame {
                 logViewer.setLocationRelativeTo(null);
                 logViewer.toFront();
             });
+            add(chunkMethodMenu);
             add(clearMenuItem);
         }
 
@@ -86,6 +97,24 @@ public class MainFrame extends JFrame {
                 add(new JScrollPane(logTextArea), BorderLayout.WEST);
                 add(okayButton, BorderLayout.SOUTH);
                 okayButton.addActionListener(actionEvent -> setVisible(false));
+            }
+        }
+
+        static class ChunkMethodMenu extends JMenu {
+            final static String[] METHODS = new String[] {"Simple", "Rabin"};
+            final static ButtonGroup chunkMethodChoicesGroup = new ButtonGroup();
+            final static JCheckBoxMenuItem[] chunkMethodChoices = new JCheckBoxMenuItem[METHODS.length];
+
+            ChunkMethodMenu() {
+                super("chunk method");
+                for (int i = 0; i < METHODS.length; i++) {
+                    chunkMethodChoices[i] = new JCheckBoxMenuItem(METHODS[i]);
+                    chunkMethodChoicesGroup.add(chunkMethodChoices[i]);
+                    if (chunkMethodChoices[i].getActionCommand().equals(FileBrowserClient.chunkMethod)) {
+                        chunkMethodChoices[i].setSelected(true);
+                    }
+                    add(chunkMethodChoices[i]);
+                }
             }
         }
     }

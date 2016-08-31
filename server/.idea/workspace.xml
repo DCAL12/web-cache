@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e974785-b451-45db-ae72-e026f700aa6b" name="Default" comment="limit to serving plain text files as String arrays">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Chunkable.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/MD5Hash.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElement.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElement.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElementArray.class" afterPath="" />
@@ -35,18 +33,27 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/package-info.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/package-info.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Hasher.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Hashable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/MD5Hash.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Hasher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/DownloadRequest.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/DownloadRequest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/FileChunker.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/FileChunker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/Hasher.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/Hasher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$1.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$Type.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$Type.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/DownloadRequest.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/DownloadRequest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu$LogViewer.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu$LogViewer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cache/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/LogEntry.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/LogEntry.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" afterPath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/display/MainFrame.java" afterPath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/display/MainFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/file1" afterPath="$PROJECT_DIR$/files/file1" />
     </list>
     <ignored path="server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -856,7 +863,7 @@
       <workItem from="1472421317923" duration="1248000" />
       <workItem from="1472441769231" duration="1146000" />
       <workItem from="1472534325778" duration="617000" />
-      <workItem from="1472618740757" duration="667000" />
+      <workItem from="1472618740757" duration="1201000" />
     </task>
     <task id="LOCAL-00001" summary="limit to serving plain text files as String arrays">
       <created>1470824366336</created>
@@ -883,7 +890,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58224000" />
+    <option name="totallyTimeSpent" value="58758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2535" y="49" width="1297" height="2111" extended-state="0" />
@@ -897,7 +904,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
