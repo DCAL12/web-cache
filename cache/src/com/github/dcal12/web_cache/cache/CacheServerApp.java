@@ -20,19 +20,16 @@ import java.util.stream.Collectors;
 @WebService(endpointInterface = "com.github.dcal12.web_cache.cache.CacheServer")
 public class CacheServerApp implements CacheServer {
 
-    private static FileServer clientProxy;
-    private static List<LogEntry> log;
-
-    static {
-        clientProxy = new FileServerAppService().getFileServerAppPort();
-        log = new ArrayList<>();
-    }
+    private static FileServer clientProxy = new FileServerAppService().getFileServerAppPort();
+    private static List<LogEntry> log = new ArrayList<>();
+    private static Chunkable chunker = FileChunker.RABIN.chunker;
+    private static Hashable hasher = Hasher.MD5.hasher;
 
     public CacheServerApp() {}
 
     // Start the web server
     public static void main(String[] args) {
-        Endpoint.publish("http://localhost:9090/cache", new CacheServerApp());
+        Endpoint.publish("http://localhost:8090/cache", new CacheServerApp());
     }
 
     @Override
@@ -54,10 +51,9 @@ public class CacheServerApp implements CacheServer {
         List<String> blockOrder = new ArrayList<>();
         Hashtable<String, byte[]> blocks = new Hashtable<>();
 
-        FileChunker.simpleFileChunker
-                .chunk(clientProxy.downloadFile(downloadRequest.getFileName()))
+        chunker.chunk(clientProxy.downloadFile(downloadRequest.getFileName()))
                 .forEach(chunk -> {
-                    String hash = MD5Hash.md5Hash.hash(chunk);
+                    String hash = hasher.hash(chunk);
                     blockOrder.add(hash);
 
                     if (!downloadRequest.getCachedBlocks().contains(hash)) { blocks.put(hash, chunk); }
@@ -74,8 +70,6 @@ public class CacheServerApp implements CacheServer {
                 .mapToInt(bytes -> bytes.length)
                 .sum();
         LogEntry response = new LogEntry(downloadRequest.getFileName(), cachedBytesLength, download.length);
-        System.out.println("cached bytes: " + cachedBytesLength);
-        System.out.println("total bytes: " + download.length);
         log.add(response);
         System.out.println(response);
 

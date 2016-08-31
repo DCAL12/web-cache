@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b66e5e72-3bdc-46f1-bb5c-4dc94ba74db4" name="Default" comment="updated clientProxy to reflect server WSDL">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ClearCache.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ClearCacheResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache1.wsdl" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Chunkable.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/MD5Hash.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElement.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElement.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElementArray.class" afterPath="" />
@@ -13,10 +12,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServer.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ClearCache.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ClearCache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ClearCacheResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ClearCacheResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFile.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFile.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFileResponse.class" afterPath="" />
@@ -38,30 +33,20 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/StringArray.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/StringArray.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/cache1.wsdl" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/package-info.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/package-info.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/CacheServer.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/CacheServer.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hashable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/MD5Hash.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/DownloadRequest.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/DownloadRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$1.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$Type.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$Type.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServer.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ObjectFactory.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ObjectFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/FileChunker.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/FileChunker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/Hasher.class" afterPath="$PROJECT_DIR$/out/production/cache/com/github/dcal12/web_cache/cache/data/Hasher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/LogEntry.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/LogEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" afterPath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/files/file1" afterPath="$PROJECT_DIR$/../server/files/file1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/files/grocery list" afterPath="$PROJECT_DIR$/../server/files/grocery list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/files/notes" afterPath="$PROJECT_DIR$/../server/files/notes" />
     </list>
     <ignored path="cache.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,11 +68,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="CacheServerApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CacheServerApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
+            <state relative-caret-position="529">
+              <caret line="51" column="61" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#CacheServerApp#0" expanded="false" />
@@ -96,13 +81,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogEntry.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/LogEntry.java">
+      <file leaf-file-name="Hasher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+            <state relative-caret-position="828">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileChunker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/FileChunker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="804">
+              <caret line="72" column="61" selection-start-line="70" selection-start-column="4" selection-end-line="72" selection-end-column="61" />
               <folding>
-                <element signature="docComment;class#LogEntry#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,9 +108,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -151,10 +146,6 @@
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockedFile.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Chunker.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleBlockedFile.java" />
-        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java" />
-        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java" />
-        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/MD5Hash.java" />
-        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockElements.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashtableAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadResponse.java" />
@@ -162,8 +153,15 @@
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/StringListAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" />
-        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
         <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/LogEntry.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleFileChunker.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/RabinFileChunker.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/MD5Hash.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hashable.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
       </list>
     </option>
   </component>
@@ -174,10 +172,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1708" />
-    <option name="y" value="49" />
+    <option name="x" value="1620" />
+    <option name="y" value="278" />
     <option name="width" value="2124" />
-    <option name="height" value="2111" />
+    <option name="height" value="1646" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -204,8 +202,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -266,7 +264,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -786,7 +784,9 @@
       <workItem from="1472421295149" duration="3419000" />
       <workItem from="1472424724717" duration="1113000" />
       <workItem from="1472439786060" duration="1869000" />
-      <workItem from="1472441727314" duration="2142000" />
+      <workItem from="1472441727314" duration="5041000" />
+      <workItem from="1472534334868" duration="2618000" />
+      <workItem from="1472618740787" duration="3442000" />
     </task>
     <task id="LOCAL-00001" summary="implemented cache methods">
       <created>1470822038824</created>
@@ -820,10 +820,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90159000" />
+    <option name="totallyTimeSpent" value="99118000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1708" y="49" width="2124" height="2111" extended-state="0" />
+    <frame x="1620" y="278" width="2124" height="1646" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -834,7 +834,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32851446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42764437" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -842,6 +842,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14736347" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900715" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -854,7 +855,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295342" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295342" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -888,16 +888,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleBlockedFile.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockedFile.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,9 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#LogEntry#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,7 +1072,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashMethod.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SortedListModel.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1090,31 +1081,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hash.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/BlockedFile.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleBlockedFile.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/HashFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/MD5Hash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/FileChunker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/clientProxy/FileServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -1161,9 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1171,9 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1188,30 +1152,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#833#834#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CacheServerApp#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/LogEntry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        <state relative-caret-position="138">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/RabinFileChunker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="919">
+          <caret line="47" column="5" selection-start-line="11" selection-start-column="42" selection-end-line="47" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/SimpleFileChunker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="26" column="6" selection-start-line="11" selection-start-column="43" selection-end-line="26" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Chunkable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hashable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/FileChunker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="72" column="61" selection-start-line="70" selection-start-column="4" selection-end-line="72" selection-end-column="61" />
           <folding>
-            <element signature="docComment;class#LogEntry#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/data/Hasher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/cache/CacheServerApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="51" column="61" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#CacheServerApp#0" expanded="false" />
           </folding>
         </state>
       </provider>

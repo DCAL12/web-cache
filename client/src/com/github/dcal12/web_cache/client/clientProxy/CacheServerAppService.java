@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CacheServerAppService", targetNamespace = "http://cache.web_cache.dcal12.github.com/", wsdlLocation = "http://localhost:9090/cache?wsdl")
+@WebServiceClient(name = "CacheServerAppService", targetNamespace = "http://cache.web_cache.dcal12.github.com/", wsdlLocation = "http://localhost:8090/cache?wsdl")
 public class CacheServerAppService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CacheServerAppService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:9090/cache?wsdl");
+            url = new URL("http://localhost:8090/cache?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

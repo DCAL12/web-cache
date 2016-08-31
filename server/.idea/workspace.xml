@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e974785-b451-45db-ae72-e026f700aa6b" name="Default" comment="limit to serving plain text files as String arrays">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ClearCache.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ClearCacheResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache1.wsdl" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Chunkable.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/MD5Hash.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElement.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElement.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/BlockElementArray.class" afterPath="" />
@@ -13,10 +12,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServer.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ClearCache.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ClearCache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ClearCacheResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/ClearCacheResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFile.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFile.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/DownloadFileResponse.class" afterPath="" />
@@ -38,30 +33,20 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/StringArray.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/StringArray.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/cache1.wsdl" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/package-info.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/clientProxy/package-info.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServer.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServer.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Hasher.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Hashable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/MD5Hash.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Hasher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/DownloadRequest.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/DownloadRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$1.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$Type.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry$Type.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/LogEntry.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServer.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ObjectFactory.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/ObjectFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/FileChunker.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/FileChunker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/Hasher.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/Hasher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/CacheServerAppService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cache/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServer.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/DownloadRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/LogEntry.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/LogEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/clientProxy/cache.wsdl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" afterPath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/file1" afterPath="$PROJECT_DIR$/files/file1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/grocery list" afterPath="$PROJECT_DIR$/files/grocery list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/notes" afterPath="$PROJECT_DIR$/files/notes" />
     </list>
     <ignored path="server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,10 +68,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="FileServerApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FileServerApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/server/FileServerApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
+            <state relative-caret-position="736">
               <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -94,18 +79,6 @@
                 <element signature="method#FileServerApp#0;class#FileServerApp#0" expanded="false" />
                 <element signature="e#885#886#0" expanded="true" />
                 <element signature="e#938#939#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileBrowser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/server/utility/FileBrowser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-              <folding>
-                <element signature="method#FileBrowser#0;class#FileBrowser#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -227,8 +200,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -336,6 +307,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -881,7 +854,9 @@
       <workItem from="1472009692565" duration="2319000" />
       <workItem from="1472179766909" duration="1283000" />
       <workItem from="1472421317923" duration="1248000" />
-      <workItem from="1472441769231" duration="550000" />
+      <workItem from="1472441769231" duration="1146000" />
+      <workItem from="1472534325778" duration="617000" />
+      <workItem from="1472618740757" duration="667000" />
     </task>
     <task id="LOCAL-00001" summary="limit to serving plain text files as String arrays">
       <created>1470824366336</created>
@@ -908,7 +883,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56344000" />
+    <option name="totallyTimeSpent" value="58224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2535" y="49" width="1297" height="2111" extended-state="0" />
@@ -1456,9 +1431,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/server/utility/FileBrowser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+          <folding>
+            <element signature="method#FileBrowser#0;class#FileBrowser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/server/FileServerApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
+        <state relative-caret-position="736">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1466,16 +1451,6 @@
             <element signature="method#FileServerApp#0;class#FileServerApp#0" expanded="false" />
             <element signature="e#885#886#0" expanded="true" />
             <element signature="e#938#939#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/server/utility/FileBrowser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-          <folding>
-            <element signature="method#FileBrowser#0;class#FileBrowser#0" expanded="false" />
           </folding>
         </state>
       </provider>

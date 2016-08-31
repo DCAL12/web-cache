@@ -4,10 +4,10 @@
 </wsp:Policy>
 <types>
 <xsd:schema>
-<xsd:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:9090/cache?xsd=1"></xsd:import>
+<xsd:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:8090/cache?xsd=1"></xsd:import>
 </xsd:schema>
 <xsd:schema>
-<xsd:import namespace="http://cache.web_cache.dcal12.github.com/" schemaLocation="http://localhost:9090/cache?xsd=2"></xsd:import>
+<xsd:import namespace="http://cache.web_cache.dcal12.github.com/" schemaLocation="http://localhost:8090/cache?xsd=2"></xsd:import>
 </xsd:schema>
 </types>
 <message name="listServerFiles">
@@ -75,7 +75,7 @@
 </binding>
 <service name="CacheServerAppService">
 <port name="CacheServerAppPort" binding="tns:CacheServerAppPortBinding">
-<soap:address location="http://localhost:9090/cache"></soap:address>
+<soap:address location="http://localhost:8090/cache"></soap:address>
 </port>
 </service>
 </definitions>
