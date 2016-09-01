@@ -35,8 +35,8 @@ public enum FileChunker {
     RABIN(file -> {
 
         /*
-          Implementation of Rabin-function-based block boundary algorithm described by Sean Rhea, Kavin Liang,
-           and Eric Brewer in "Value-Based Web Caching," WWW2003, May 20-24, 2003. ACM 1-58113-680-3/03/0005.
+          Implementation of Rabin-function-based block boundary algorithm described by Rhea, S. C., et al. (2003).
+          Value-based web caching. Proceedings of the 12th international conference on World Wide Web, ACM.
          */
 
         List<byte[]> byteChunks = new ArrayList<>();

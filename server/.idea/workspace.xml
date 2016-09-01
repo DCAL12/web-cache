@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e974785-b451-45db-ae72-e026f700aa6b" name="Default" comment="limit to serving plain text files as String arrays">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/FileChunker.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/data/FileChunker.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/file1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/grocery list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/notes" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cache/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Chunkable.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/Chunkable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/data/FileChunker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" afterPath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -819,7 +822,7 @@
       <workItem from="1472441769231" duration="1146000" />
       <workItem from="1472534325778" duration="617000" />
       <workItem from="1472618740757" duration="1201000" />
-      <workItem from="1472688077328" duration="609000" />
+      <workItem from="1472688077328" duration="1812000" />
     </task>
     <task id="LOCAL-00001" summary="limit to serving plain text files as String arrays">
       <created>1470824366336</created>
@@ -846,7 +849,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59367000" />
+    <option name="totallyTimeSpent" value="60570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2535" y="49" width="1297" height="2111" extended-state="0" />
@@ -860,7 +863,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />

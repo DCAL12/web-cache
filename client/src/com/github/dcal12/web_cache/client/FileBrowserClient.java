@@ -79,6 +79,8 @@ public class FileBrowserClient {
                       Retrieved 07/08/2016
                      */
 
+                    long startTime = System.currentTimeMillis();
+
                     // package download request to cache server
                     DownloadRequest downloadRequest = new DownloadRequest();
                     downloadRequest.setFileName(String.valueOf(item));
@@ -89,6 +91,10 @@ public class FileBrowserClient {
 
                     DownloadResponse download = clientProxy.downloadFile(downloadRequest);
 
+                    long completeTime = System.currentTimeMillis();
+                    System.out.println("download completed from cache in " + (completeTime - startTime) + " ms");
+
+                    startTime = System.currentTimeMillis();
                     download.getBlocks().getItem().forEach(blockElement ->
                             cachedBlocks.put(blockElement.getHash(), blockElement.getBlock()));
 
@@ -113,6 +119,9 @@ public class FileBrowserClient {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
+                    completeTime = System.currentTimeMillis();
+                    System.out.println("client processed file in " + (completeTime - startTime) + " ms");
 
                     System.out.println("downloaded '" + downloadRequest.getFileName() + "' at " + new Date());
                     mainFrame.setLogText(clientProxy.getLog());

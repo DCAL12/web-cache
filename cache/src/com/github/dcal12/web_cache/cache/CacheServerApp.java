@@ -45,8 +45,12 @@ public class CacheServerApp implements CacheServer {
         log.add(request);
         System.out.println(request);
 
+        long startTime = System.currentTimeMillis();
         byte[] download = clientProxy.downloadFile(downloadRequest.getFileName());
+        long completeTime = System.currentTimeMillis();
+        System.out.println("download completed from origin server in " + (completeTime - startTime) + " ms");
 
+        startTime = System.currentTimeMillis();
         // divide file into blocks
         List<String> blockOrder = new ArrayList<>();
         Hashtable<String, byte[]> blocks = new Hashtable<>();
@@ -86,6 +90,9 @@ public class CacheServerApp implements CacheServer {
                 download.length);
         log.add(response);
         System.out.println(response);
+
+        completeTime = System.currentTimeMillis();
+        System.out.println("cache processed file in " + (completeTime - startTime) + " ms");
 
         return downloadResponse;
     }
