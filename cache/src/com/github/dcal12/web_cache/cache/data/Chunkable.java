@@ -7,5 +7,6 @@ import java.util.List;
  */
 @FunctionalInterface
 public interface Chunkable {
+    int chunkSize = 2047;
     public List<byte[]> chunk(byte[] file);
 }

@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 public class FileBrowserClient {
 
-    private static String downloadLocation = new File("").getAbsolutePath();
+    private static String downloadLocation = new File("").getAbsolutePath() + '/';
     private static HashMap<String, byte[]> cachedBlocks = null;
     private static MainFrame mainFrame;
     private static FileListPanel fileListPanel;

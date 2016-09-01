@@ -16,10 +16,16 @@ public enum FileChunker {
          */
 
         List<byte[]> byteChunks = new ArrayList<>();
-        int chunkSize = 4;
 
-        for (int i = 0; i < file.length; i+= chunkSize) {
-            int endOfChunk = Math.min(file.length, i + chunkSize);
+
+        // return at least 1 block
+        if(file.length <= Chunkable.chunkSize + 1) {
+            byteChunks.add(file);
+            return byteChunks;
+        }
+
+        for (int i = 0; i < file.length; i+= Chunkable.chunkSize) {
+            int endOfChunk = Math.min(file.length, i + Chunkable.chunkSize);
             byte[] chunk = Arrays.copyOfRange(file, i, endOfChunk);
             byteChunks.add(chunk);
         }
@@ -34,12 +40,11 @@ public enum FileChunker {
          */
 
         List<byte[]> byteChunks = new ArrayList<>();
-        int chunkSize = 4;
         int windowSize = 3;
         int prime = 541;
 
         // return at least 1 block
-        if(file.length <= chunkSize + 1) {
+        if(file.length <= Chunkable.chunkSize + 1) {
             byteChunks.add(file);
             return byteChunks;
         }
@@ -55,7 +60,7 @@ public enum FileChunker {
 
             result = (result - file[i - 1] * Math.pow(prime, windowSize - 1)) * prime + file[endOfWindow];
 
-            if (result % chunkSize == 0 || endOfWindow == file.length - 1) {
+            if (result % Chunkable.chunkSize == 0 || endOfWindow == file.length - 1) {
 
                 int endOfChunk = Math.min(file.length, endOfWindow);
                 byte[] chunk = Arrays.copyOfRange(file, startOfChunk, endOfChunk + 1);
