@@ -59,16 +59,25 @@ public class CacheServerApp implements CacheServer {
         log.add(request);
         System.out.println(request);
 
+        long startTime = System.currentTimeMillis();
         Boolean isCached = cachedFiles.containsKey(fileName);
         LogEntry response = new LogEntry(fileName, isCached);
         log.add(response);
         System.out.println(response);
 
         if (isCached) {
+            long completeTime = System.currentTimeMillis();
+            System.out.println("cache processed file in " + (completeTime - startTime) + " ms");
             return cachedFiles.get(fileName);
         }
+        long completeTime = System.currentTimeMillis();
+        System.out.println("cache processed file in " + (completeTime - startTime) + " ms");
 
+        startTime = System.currentTimeMillis();
         String[] downloadFromServer = clientProxy.downloadFile(fileName);
+        completeTime = System.currentTimeMillis();
+        System.out.println("download completed from origin server in " + (completeTime - startTime) + " ms");
+
         cachedFiles.put(fileName, downloadFromServer);
         return downloadFromServer;
     }

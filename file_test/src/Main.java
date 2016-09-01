@@ -30,13 +30,13 @@ public class Main {
      * https://stackoverflow.com/questions/3405195/divide-array-into-smaller-parts
      * Retrieved 23/08/2016
      */
-    public static List<byte[]> chunkBytes(byte[] bytes, int chunksize) {
+    public static List<byte[]> chunkBytes(byte[] bytes, int chunkSize) {
 
         List<byte[]> byteChunks = new ArrayList<>();
 
-        for (int i = 0; i < bytes.length; i+=chunksize) {
-            int endOfChunk = Math.min(bytes.length, i + chunksize);
-            byteChunks.add(Arrays.copyOfRange(bytes, i, endOfChunk))
+        for (int i = 0; i < bytes.length; i+=chunkSize) {
+            int endOfChunk = Math.min(bytes.length, i + chunkSize);
+            byteChunks.add(Arrays.copyOfRange(bytes, i, endOfChunk));
         }
 
         return byteChunks;

@@ -78,16 +78,26 @@ public class FileBrowserClient {
 
                 selectedItems.forEach(item -> {
 
+                    long startTime = System.currentTimeMillis();
+
                     String fileName = String.valueOf(item);
                     Path path = FileSystems.getDefault().getPath(downloadLocation, fileName);
 
                     List<String> download = clientProxy.downloadFile(fileName);
+
+                    long completeTime = System.currentTimeMillis();
+                    System.out.println("download completed from cache in " + (completeTime - startTime) + " ms");
+
+                    startTime = System.currentTimeMillis();
 
                     try {
                         Files.write(path, download);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
+                    completeTime = System.currentTimeMillis();
+                    System.out.println("client processed file in " + (completeTime - startTime) + " ms");
 
                     System.out.println("downloaded '" + fileName + "' at " + new Date());
                     mainFrame.setLogText(clientProxy.getLog());
