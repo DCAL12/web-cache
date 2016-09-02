@@ -140,8 +140,6 @@ public class FileBrowserClient {
                     try {
                         BufferedReader reader = new BufferedReader(
                                 new FileReader(downloadLocation + '/' + fileListPanel.getSelectedClientItem()));
-
-
                         String line = null;
                         while ((line = reader.readLine()) != null) {
                             lines.add(line);
@@ -155,6 +153,9 @@ public class FileBrowserClient {
 
             // view cache server log
             mainFrame.addLogContentHandler(actionEvent -> mainFrame.setLogText(clientProxy.getLog()));
+
+            // view cache contents
+            mainFrame.addCacheContentHandler(actionEvent -> mainFrame.setCacheText(cachedBlocks));
 
             // clear cache contents
             mainFrame.addClearCacheHandler(actionEvent -> {

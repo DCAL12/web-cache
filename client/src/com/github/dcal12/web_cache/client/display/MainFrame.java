@@ -5,6 +5,7 @@ import com.github.dcal12.web_cache.client.FileBrowserClient;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -50,6 +51,18 @@ public class MainFrame extends JFrame {
         Menu.logViewerItem.addActionListener(listener);
     }
 
+    public void setCacheText(HashMap<String, byte[]> cachedBlocks) {
+        Menu.CacheViewer.cacheTextArea.setText("");
+        cachedBlocks.forEach((hash, bytes) ->
+                Menu.CacheViewer.cacheTextArea.append("block: " + hash +
+                        '\n' + new String(bytes) + "\n\n"));
+    }
+
+    public void addCacheContentHandler(ActionListener listener) {
+        // Pass cache contents get function to menu item
+        Menu.cacheViewerItem.addActionListener(listener);
+    }
+
     public void addClearCacheHandler(ActionListener listener) {
         // Pass cache clear function to menu item
         Menu.clearMenuItem.addActionListener(listener);
@@ -67,6 +80,8 @@ public class MainFrame extends JFrame {
         final static JLabel CACHE_LABEL = new JLabel("Cache");
         static JMenuItem logViewerItem = new JMenuItem("view log");
         static LogViewer logViewer = new LogViewer();
+        static JMenuItem cacheViewerItem = new JMenuItem("view cached blocks");
+        static CacheViewer cacheViewer = new CacheViewer();
         static ChunkMethodMenu chunkMethodMenu = new ChunkMethodMenu();
         static JMenuItem clearMenuItem = new JMenuItem("clear cache");
 
@@ -78,6 +93,13 @@ public class MainFrame extends JFrame {
                 logViewer.setVisible(true);
                 logViewer.setLocationRelativeTo(null);
                 logViewer.toFront();
+            });
+            add(cacheViewerItem);
+            cacheViewerItem.addActionListener(actionEvent -> {
+                cacheViewer.pack();
+                cacheViewer.setVisible(true);
+                cacheViewer.setLocationRelativeTo(null);
+                cacheViewer.toFront();
             });
             add(chunkMethodMenu);
             add(clearMenuItem);
@@ -95,6 +117,23 @@ public class MainFrame extends JFrame {
 
                 add(new JLabel("Cache Server Events"), BorderLayout.NORTH);
                 add(new JScrollPane(logTextArea), BorderLayout.WEST);
+                add(okayButton, BorderLayout.SOUTH);
+                okayButton.addActionListener(actionEvent -> setVisible(false));
+            }
+        }
+
+        static class CacheViewer extends JDialog {
+
+            private static JTextArea cacheTextArea = new JTextArea(20, 50);
+            private static JButton okayButton = new JButton("okay");
+
+            CacheViewer() {
+                setModal(false);
+                setResizable(true);
+                cacheTextArea.setEditable(false);
+
+                add(new JLabel("Cached File Blocks"), BorderLayout.NORTH);
+                add(new JScrollPane(cacheTextArea), BorderLayout.WEST);
                 add(okayButton, BorderLayout.SOUTH);
                 okayButton.addActionListener(actionEvent -> setVisible(false));
             }

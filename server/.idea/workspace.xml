@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e974785-b451-45db-ae72-e026f700aa6b" name="Default" comment="limit to serving plain text files as String arrays">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/file1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/grocery list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/notes" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu$ChunkMethodMenu.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu$ChunkMethodMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu$LogViewer.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu$LogViewer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame$Menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame.class" afterPath="$PROJECT_DIR$/../client/out/production/client/com/github/dcal12/web_cache/client/display/MainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cache/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/jquery-3.1.0.js" afterPath="$PROJECT_DIR$/../client/jquery-3.1.0.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" afterPath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/display/MainFrame.java" afterPath="$PROJECT_DIR$/../client/src/com/github/dcal12/web_cache/client/display/MainFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="server.iws" />
@@ -36,7 +37,7 @@
       <file leaf-file-name="FileServerApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/server/FileServerApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
+            <state relative-caret-position="690">
               <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -107,9 +108,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2535" />
+    <option name="x" value="2083" />
     <option name="y" value="49" />
-    <option name="width" value="1297" />
+    <option name="width" value="1749" />
     <option name="height" value="2111" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -166,8 +167,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,6 +273,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -823,6 +824,8 @@
       <workItem from="1472534325778" duration="617000" />
       <workItem from="1472618740757" duration="1201000" />
       <workItem from="1472688077328" duration="1812000" />
+      <workItem from="1472773993470" duration="602000" />
+      <workItem from="1472776912437" duration="266000" />
     </task>
     <task id="LOCAL-00001" summary="limit to serving plain text files as String arrays">
       <created>1470824366336</created>
@@ -849,10 +852,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60570000" />
+    <option name="totallyTimeSpent" value="61438000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2535" y="49" width="1297" height="2111" extended-state="0" />
+    <frame x="2083" y="49" width="1749" height="2111" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -863,12 +866,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14186585" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10520297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1409,7 +1412,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/dcal12/web_cache/server/FileServerApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
+        <state relative-caret-position="690">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
