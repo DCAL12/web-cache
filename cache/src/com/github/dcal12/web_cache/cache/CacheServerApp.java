@@ -24,12 +24,14 @@ public class CacheServerApp implements CacheServer {
     private static List<LogEntry> log = new ArrayList<>();
     private static final FileChunker DEFAULT_CHUNKER = FileChunker.RABIN;
     private static Hashable hasher = Hasher.MD5.hasher;
+    private static String host = "http://localhost:9090/cache";
 
     public CacheServerApp() {}
 
     // Start the web server
     public static void main(String[] args) {
-        Endpoint.publish("http://localhost:8090/cache", new CacheServerApp());
+    	Endpoint.publish(host, new CacheServerApp());
+        System.out.println("Cache Server running at " + host);
     }
 
     @Override

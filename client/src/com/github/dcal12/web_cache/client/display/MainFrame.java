@@ -12,6 +12,7 @@ import java.util.List;
  * Created by Douglas Callaway on 8/12/16.
  */
 
+@SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 
     public static JFileChooser downloadDirectoryChooser;

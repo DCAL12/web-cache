@@ -3,9 +3,7 @@ package com.github.dcal12.web_cache.client;
 import com.github.dcal12.web_cache.client.clientProxy.*;
 import com.github.dcal12.web_cache.client.display.FileListPanel;
 import com.github.dcal12.web_cache.client.display.MainFrame;
-import com.sun.istack.ByteArrayDataSource;
 
-import javax.activation.DataHandler;
 import javax.swing.*;
 import java.io.*;
 import java.util.*;
@@ -45,7 +43,8 @@ public class FileBrowserClient {
                 .collect(Collectors.toList());
     }
 
-    public static void main(String[] args) throws IOException {
+    @SuppressWarnings("unchecked")
+	public static void main(String[] args) throws IOException {
 
         SwingUtilities.invokeLater(() -> {
 
@@ -70,7 +69,7 @@ public class FileBrowserClient {
             // download selected files
             fileListPanel.addDownloadListener(actionEvent -> {
 
-                List selectedItems = fileListPanel.getSelectedServerItems();
+                List<String> selectedItems = fileListPanel.getSelectedServerItems();
 
                 selectedItems.forEach(item -> {
                     /*
@@ -107,14 +106,12 @@ public class FileBrowserClient {
                             e.printStackTrace();
                         }
                     });
-                    ByteArrayDataSource byteArrayDataSource =
-                            new ByteArrayDataSource(byteOutputStream.toByteArray(), "application/octet-stream");
-
+            
                     // write bytes to file
-                    DataHandler dataHandler = new DataHandler(byteArrayDataSource);
+                    //DataHandler dataHandler = new DataHandler(byteArrayDataSource);
                     try {
                         FileOutputStream fileOutputStream = new FileOutputStream(downloadLocation + downloadRequest.getFileName());
-                        dataHandler.writeTo(fileOutputStream);
+                        byteOutputStream.writeTo(fileOutputStream);
                         fileOutputStream.flush();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -138,12 +135,13 @@ public class FileBrowserClient {
                     List<String> lines = new ArrayList<>();
 
                     try {
-                        BufferedReader reader = new BufferedReader(
+						BufferedReader reader = new BufferedReader(
                                 new FileReader(downloadLocation + '/' + fileListPanel.getSelectedClientItem()));
                         String line = null;
                         while ((line = reader.readLine()) != null) {
                             lines.add(line);
                         }
+                        reader.close();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

@@ -9,6 +9,7 @@ import java.util.*;
  * http://www.java2s.com/Code/Java/Swing-JFC/DualJListwithbuttonsinbetween.htm
  * Retrieved 08/08/2016
  */
+@SuppressWarnings({ "serial", "rawtypes" })
 public class SortedListModel extends AbstractListModel {
 
     SortedSet model;
@@ -25,13 +26,15 @@ public class SortedListModel extends AbstractListModel {
         return model.toArray()[index];
     }
 
-    public void add(Object element) {
+    @SuppressWarnings("unchecked")
+	public void add(Object element) {
         if (model.add(element)) {
             fireContentsChanged(this, 0, getSize());
         }
     }
 
-    public void addAll(Object elements[]) {
+    @SuppressWarnings("unchecked")
+	public void addAll(Object elements[]) {
         Collection c = Arrays.asList(elements);
         model.addAll(c);
         fireContentsChanged(this, 0, getSize());

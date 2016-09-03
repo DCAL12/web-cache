@@ -15,5 +15,6 @@ public class BlockElement {
         this.block = block;
     }
 
-    private BlockElement() {}
+    @SuppressWarnings("unused")
+	private BlockElement() {}
 }

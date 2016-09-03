@@ -14,20 +14,24 @@ import java.util.List;
  * http://www.java2s.com/Code/Java/Swing-JFC/DualJListwithbuttonsinbetween.htm
  * Retrieved 08/08/2016
  */
+@SuppressWarnings("serial")
 public class FileListPanel extends JPanel {
 
     private static final Insets EMPTY_INSETS = new Insets(0, 0, 0, 0);
 
-    private JList serverFilesList;
+    @SuppressWarnings("rawtypes")
+	private JList serverFilesList;
     private SortedListModel serverFilesListModel;
-    private JList clientFilesList;
+    @SuppressWarnings("rawtypes")
+	private JList clientFilesList;
     private SortedListModel clientFilesListModel;
     private JLabel selectedDirectoryLabel;
     private JButton selectDirectoryButton;
     private JButton downloadButton;
     private JTextArea filePreview;
 
-    public FileListPanel(String selectedDirectory) {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public FileListPanel(String selectedDirectory) {
         setLayout(new GridBagLayout());
 
         JLabel serverLabel = new JLabel("Server Files");
@@ -130,7 +134,8 @@ public class FileListPanel extends JPanel {
         lines.forEach(s -> filePreview.append(s + '\n'));
     }
 
-    public java.util.List getSelectedServerItems() {
+    @SuppressWarnings("rawtypes")
+	public java.util.List getSelectedServerItems() {
         return serverFilesList.getSelectedValuesList();
     }
 

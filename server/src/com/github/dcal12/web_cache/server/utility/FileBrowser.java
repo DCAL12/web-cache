@@ -3,10 +3,6 @@ package com.github.dcal12.web_cache.server.utility;
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 /**
  * Created by Douglas Callaway on 8/7/16.

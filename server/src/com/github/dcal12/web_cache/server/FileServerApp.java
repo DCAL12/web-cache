@@ -14,20 +14,18 @@ import javax.xml.ws.soap.MTOM;
 @MTOM
 @WebService(endpointInterface = "com.github.dcal12.web_cache.server.FileServer")
 public class FileServerApp implements FileServer {
-
-    private static final String STORAGE = "/home/user/classes/COMPSCI-711/assignments/web-cache/Part2/server/files/";
-    private static FileBrowser fileBrowser;
-
-    static {
-        fileBrowser = FileBrowser.getInstance();
-    }
+	
+	private static final String STORAGE = "files/";
+	private static FileBrowser fileBrowser = FileBrowser.getInstance();
+	private static String host = "http://localhost:8081/app";
 
     public FileServerApp() {
     }
 
     // Start the web server
     public static void main(String[] args) {
-        Endpoint.publish("http://localhost:8080/app", new FileServerApp());
+    	Endpoint.publish(host, new FileServerApp());
+        System.out.println("File Server running at " + host);
     }
 
     @Override

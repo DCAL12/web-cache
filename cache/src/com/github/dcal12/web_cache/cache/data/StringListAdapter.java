@@ -11,7 +11,7 @@ public class StringListAdapter extends XmlAdapter<String[], List<String>> {
 
     @Override
     public List<String> unmarshal(String[] strings) throws Exception {
-        List<String> stringList = new ArrayList();
+        List<String> stringList = new ArrayList<String>();
         for (String string : strings) {
             stringList.add(string);
         }
