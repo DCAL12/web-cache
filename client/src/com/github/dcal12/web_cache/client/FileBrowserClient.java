@@ -49,7 +49,8 @@ public class FileBrowserClient {
                 .collect(Collectors.toList());
     }
 
-    public static void main(String[] args) throws IOException {
+    @SuppressWarnings("unchecked")
+	public static void main(String[] args) throws IOException {
 
         SwingUtilities.invokeLater(() -> {
 
@@ -74,7 +75,7 @@ public class FileBrowserClient {
             // download selected files
             fileListPanel.addDownloadListener(actionEvent -> {
 
-                List selectedItems = fileListPanel.getSelectedServerItems();
+                List<String> selectedItems = fileListPanel.getSelectedServerItems();
 
                 selectedItems.forEach(item -> {
 
@@ -116,12 +117,11 @@ public class FileBrowserClient {
                     try {
                         BufferedReader reader = new BufferedReader(
                                 new FileReader(downloadLocation + '/' + fileListPanel.getSelectedClientItem()));
-
-
                         String line = null;
                         while ((line = reader.readLine()) != null) {
                             lines.add(line);
                         }
+                        reader.close();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

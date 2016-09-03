@@ -13,7 +13,7 @@ import java.net.URL;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "FileServerAppService", targetNamespace = "http://server.web_cache.dcal12.github.com/", wsdlLocation = "http://localhost:8080/app?wsdl")
+@WebServiceClient(name = "FileServerAppService", targetNamespace = "http://server.web_cache.dcal12.github.com/", wsdlLocation = "http://localhost:8081/app?wsdl")
 public class FileServerAppService
         extends Service {
 
@@ -25,7 +25,7 @@ public class FileServerAppService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/app?wsdl");
+            url = new URL("http://localhost:8081/app?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

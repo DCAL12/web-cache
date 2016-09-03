@@ -19,15 +19,10 @@ import java.util.stream.Collectors;
 @WebService(endpointInterface = "com.github.dcal12.web_cache.cache.CacheServer")
 public class CacheServerApp implements CacheServer {
 
-    private static FileServer clientProxy;
-    private static Hashtable<String, String[]> cachedFiles;
-    private static List<LogEntry> log;
-
-    static {
-        clientProxy = new FileServerAppService().getFileServerAppPort();
-        cachedFiles = new Hashtable<>();
-        log = new ArrayList<>();
-    }
+    private static FileServer clientProxy = new FileServerAppService().getFileServerAppPort();
+    private static Hashtable<String, String[]> cachedFiles = new Hashtable<>();
+    private static List<LogEntry> log = new ArrayList<>();
+    private static String host = "http://localhost:9090/cache";
 
     public CacheServerApp() {
 
@@ -35,7 +30,8 @@ public class CacheServerApp implements CacheServer {
 
     // Start the web server
     public static void main(String[] args) {
-        Endpoint.publish("http://localhost:9090/cache", new CacheServerApp());
+        Endpoint.publish(host, new CacheServerApp());
+        System.out.println("Cache Server running at " + host);
     }
 
     @Override

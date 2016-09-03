@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8265ecc-03ec-49d9-9c2e-48eef941a142" name="Default" comment="fixed passed string array data types">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../server/files/Assignment1-2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../server/files/Assignment1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../server/files/file1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../server/files/grocery list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../server/files/notes" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" afterPath="$PROJECT_DIR$/../cache/out/production/cache/com/github/dcal12/web_cache/cache/CacheServerApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" afterPath="$PROJECT_DIR$/out/production/client/com/github/dcal12/web_cache/client/FileBrowserClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../file_test/out/production/file_test/Main.class" afterPath="$PROJECT_DIR$/../file_test/out/production/file_test/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cache/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" afterPath="$PROJECT_DIR$/../cache/src/com/github/dcal12/web_cache/cache/CacheServerApp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" afterPath="$PROJECT_DIR$/src/com/github/dcal12/web_cache/client/FileBrowserClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../file_test/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../file_test/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../file_test/src/Main.java" afterPath="$PROJECT_DIR$/../file_test/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" />
     </list>
     <ignored path="client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,7 +84,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="8" />
+    <option name="x" value="16" />
     <option name="y" value="49" />
     <option name="width" value="640" />
     <option name="height" value="2111" />
@@ -128,6 +114,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -211,14 +199,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Part2/client" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
@@ -719,6 +705,7 @@
       <workItem from="1472688323053" duration="3000" />
       <workItem from="1472705282251" duration="1425000" />
       <workItem from="1472765151611" duration="609000" />
+      <workItem from="1472773903934" duration="126000" />
     </task>
     <task id="LOCAL-00001" summary="fixed passed string array data types">
       <created>1470864762793</created>
@@ -752,22 +739,21 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68914000" />
+    <option name="totallyTimeSpent" value="69040000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="49" width="640" height="2111" extended-state="0" />
+    <frame x="16" y="49" width="640" height="2111" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31704885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31704885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -782,6 +768,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295342" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
